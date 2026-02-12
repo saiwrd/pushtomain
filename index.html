@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joel Martinez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site">
+
+    <aside class="sidebar">
+      <h1>Joel Martinez</h1>
+      <p class="tagline">Building things and writing about it.</p>
+      <nav>
+        <a href="https://linkedin.com/in/joeldmartinez" class="arrow">LinkedIn</a>
+        <a href="https://github.com/joelmartinez" class="arrow">GitHub</a>
+        <a href="https://x.com/joeldmartinez" class="arrow">X</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+
+      <div class="section">
+        <p>Hey.</p>
+        <p>I'm Joel. I run a small AI-powered sales agency and build software on the side. Most of my work lives at the intersection of sales, automation, and figuring out what AI is actually good for (vs. what people claim it's good for).</p>
+        <p>This is where I share the things I'm working on.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <h2>Cassette</h2>
+        <p>A desktop app for recording and transcribing meetings. Built with Electron and designed to look like it belongs on a 1991 Macintosh.</p>
+        <p>Cassette captures system audio and microphone simultaneously, runs local transcription via Whisper, and saves everything organized by client. The UI uses Chicago and Geneva bitmap fonts with a single-window, skeuomorphic tape deck interface.</p>
+        <p>The interesting technical challenge was getting Electron 40 to render bitmap fonts without crashing Chromium's font backend. The solution was simpler than expected: stop trying to disable the new renderer and just let it work.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <p style="color: var(--text-muted); font-size: 0.8rem;">More coming soon.</p>
+      </div>
+
+    </main>
+
+  </div>
+</body>
+</html>

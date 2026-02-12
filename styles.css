@@ -1,0 +1,134 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
+:root {
+  --text: #1a1a1a;
+  --text-muted: rgba(26, 26, 26, 0.5);
+  --bg: #ffffff;
+  --accent: #1B4D3E;
+  --rule: rgba(26, 26, 26, 0.15);
+  --content-max: 960px;
+  --sidebar-width: 240px;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* ── Layout ── */
+.site {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: 4rem;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  position: sticky;
+  top: 4rem;
+  align-self: start;
+}
+
+.sidebar h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .tagline {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sidebar nav a {
+  font-size: 0.8rem;
+}
+
+/* ── Links ── */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Main Content ── */
+.content h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  margin-bottom: 1.2rem;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Sections ── */
+.section {
+  margin-bottom: 3rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Separators ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+/* ── Arrow links (external) ── */
+.arrow::after {
+  content: ' \2197';
+  font-size: 0.75em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .site {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
