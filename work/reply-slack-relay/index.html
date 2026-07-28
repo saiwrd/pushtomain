@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reply → Slack Relay — Joel Martinez</title>
+  <meta name="description" content="A single Cloudflare Worker that turns cold-email replies into rich Slack alerts for any client — new client live in about two minutes.">
+  <meta property="og:title" content="Reply → Slack Relay">
+  <meta property="og:description" content="One multi-tenant Cloudflare Worker instead of a bespoke webhook per client.">
+  <meta property="og:type" content="article">
+  <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="topbar reveal d1">
+      <a class="back" href="/"><span class="ar">←</span> Joel Martinez</a>
+      <span class="avail"><span class="dot"></span>Seattle</span>
+    </header>
+
+    <section class="detail-hero">
+      <p class="kicker reveal d2">The Workshop · 11</p>
+      <h1 class="detail-title reveal d3">Reply → Slack Relay</h1>
+      <p class="detail-lede reveal d4">A single Cloudflare Worker that turns cold-email replies into rich Slack alerts for any client — one deployment serving everyone, instead of a bespoke webhook each time.</p>
+      <div class="tags reveal d5">
+        <span class="tag soon">Cloudflare Worker</span>
+        <span class="tag soon">Webhooks</span>
+        <span class="tag soon">Multi-tenant</span>
+      </div>
+    </section>
+
+    <div class="stat-band">
+      <div class="stat"><div class="big">1</div><div class="cap">Worker serving every client</div></div>
+      <div class="stat"><div class="big">~2 min</div><div class="cap">to onboard a new client — one secret, one webhook</div></div>
+      <div class="stat"><div class="big">24/7</div><div class="cap">always-on, serverless, no infrastructure to run</div></div>
+    </div>
+
+    <div class="detail-body">
+      <div class="block">
+        <h2>The problem</h2>
+        <p>Every new client wanted the same thing: a Slack ping the moment a prospect replied to a campaign. Building a one-off webhook integration per client meant repeating the same plumbing over and over and maintaining all of it forever.</p>
+      </div>
+      <div class="block">
+        <h2>What I built</h2>
+        <p>One Cloudflare Worker that accepts a per-client path, looks up that client's Slack webhook from Worker secrets, and transforms the incoming reply event into a formatted Slack message — a header, structured fields, the quoted reply, and a button that opens the lead straight in the campaign tool. Adding a client is a single secret plus one webhook configuration.</p>
+      </div>
+      <div class="block">
+        <h2>The result</h2>
+        <ul class="results-list">
+          <li>Multiple client slugs live on a single deployment.</li>
+          <li>A new client goes live in about two minutes.</li>
+          <li>Always-on and serverless — nothing to provision, nothing to patch.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot-grid">
+        <nav class="foot-links">
+          <a href="mailto:joel@pushtomain.xyz">Email</a>
+          <a href="https://www.linkedin.com/in/joelrmartinez/">LinkedIn</a>
+          <a href="https://github.com/saiwrd">GitHub</a>
+          <a href="https://x.com/itsjoelmartinez">X</a>
+        </nav>
+        <p class="colophon">
+          Handwritten HTML. Self-hosted type (Apfel Grotezk by Collletttivo).
+          Shipped on Cloudflare. <span class="wordmark">push to main</span> · © 2026
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

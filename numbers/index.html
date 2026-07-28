@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Math of Sales — Joel Martinez</title>
+  <meta name="description" content="An interactive calculator for outbound: exactly what it takes to hit a revenue goal by cold calling." />
+  <style>
+    @font-face { font-family: "Apfel Grotezk"; src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Apfel Grotezk"; src: url("/fonts/ApfelGrotezk-Mittel.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Apfel Grotezk"; src: url("/fonts/ApfelGrotezk-Fett.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+    :root {
+      --paper: #ece5d6; --panel: #f3eee2; --ink: #191712; --ink-2: #4a463c;
+      --muted: rgba(25,23,18,0.5); --green: #1b4d3e; --rule: rgba(25,23,18,0.16);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--paper); color: var(--ink); font-family: "Apfel Grotezk", system-ui, sans-serif;
+      line-height: 1.55; -webkit-font-smoothing: antialiased; padding: clamp(1.4rem, 5vw, 4rem); }
+    .wrap { max-width: 620px; margin: 0 auto; }
+    .back { font-size: 0.85rem; color: var(--ink-2); font-weight: 500; display: inline-block; margin-bottom: 2.2rem; }
+    .back:hover { color: var(--green); }
+    a { color: inherit; text-decoration: none; }
+    .kicker { font-weight: 500; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-weight: 700; font-size: clamp(2rem, 7vw, 3.2rem); letter-spacing: -0.03em; line-height: 1.02; margin: 0.6rem 0 0.5rem; }
+    h1 em { color: var(--green); font-style: italic; }
+    .sub { color: var(--ink-2); margin-bottom: 2.4rem; max-width: 42ch; }
+    .card { background: var(--panel); border: 1px solid var(--rule); border-radius: 14px; padding: clamp(1.4rem, 4vw, 2.2rem); }
+    .card h2 { font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.6rem; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; margin-bottom: 1.6rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.4rem; }
+    .field { position: relative; }
+    .field .pre { position: absolute; left: 0.8rem; top: 50%; transform: translateY(-50%); color: var(--muted); }
+    input[type=number] { width: 100%; background: var(--paper); border: 1px solid var(--rule); color: var(--ink);
+      font: inherit; padding: 0.65rem 0.8rem; border-radius: 8px; }
+    input[type=number].dollar { padding-left: 1.6rem; }
+    .slider { margin-bottom: 1.3rem; }
+    .slider .head { display: flex; justify-content: space-between; align-items: baseline; }
+    .slider .name { font-weight: 500; font-size: 0.92rem; }
+    .slider .val { font-weight: 700; }
+    .slider .desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; }
+    input[type=range] { width: 100%; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 4px;
+      background: var(--rule); outline: none; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+      background: var(--paper); border: 2px solid var(--green); cursor: pointer; }
+    input[type=range]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--paper); border: 2px solid var(--green); cursor: pointer; }
+    .results { border-top: 1px solid var(--rule); margin-top: 1.6rem; padding-top: 1.4rem; }
+    .results h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.9rem; }
+    .kv { display: flex; justify-content: space-between; padding: 0.32rem 0; font-size: 0.95rem; }
+    .kv .k { color: var(--ink-2); }
+    .kv .v { font-weight: 500; font-variant-numeric: tabular-nums; }
+    .headline { border-top: 1px solid var(--rule); margin-top: 1.2rem; padding-top: 1.4rem; text-align: center; }
+    .headline .l { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+    .headline .big { font-weight: 700; font-size: clamp(3rem, 12vw, 4.5rem); color: var(--green); line-height: 1; margin-top: 0.3rem; letter-spacing: -0.03em; }
+    .gap { font-size: 0.9rem; font-weight: 500; margin-top: 0.6rem; }
+    .gap.over { color: #b0492f; }
+    .gap.under { color: var(--green); }
+    .note { color: var(--muted); font-size: 0.82rem; line-height: 1.6; margin-top: 2rem; max-width: 46ch; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/">← push to main</a>
+    <p class="kicker">The Math of Sales</p>
+    <h1>Calculate your <em>outbound math.</em></h1>
+    <p class="sub">Enter your goal and see what it actually takes to hit it — by cold calling, where the numbers are controlled enough to trust.</p>
+
+    <div class="card">
+      <h2>📞 Cold Calling Calculator</h2>
+      <div class="grid">
+        <div><label for="rev">Monthly Revenue Goal</label><div class="field"><span class="pre">$</span><input class="dollar" id="rev" type="number" value="50000" /></div></div>
+        <div><label for="deal">Average Deal Size</label><div class="field"><span class="pre">$</span><input class="dollar" id="deal" type="number" value="5000" /></div></div>
+        <div><label for="reps">Number of Sales Reps</label><input id="reps" type="number" min="1" value="1" /></div>
+        <div><label for="cur">Current Daily Dials</label><input id="cur" type="number" min="0" value="0" /></div>
+      </div>
+
+      <div class="slider">
+        <div class="head"><span class="name">Connect Rate</span><span class="val" id="v-connect">6%</span></div>
+        <p class="desc">% of dials where someone picks up</p>
+        <input type="range" id="connect" min="1" max="100" value="6" />
+      </div>
+      <div class="slider">
+        <div class="head"><span class="name">Conversation to Meeting</span><span class="val" id="v-conv">10%</span></div>
+        <p class="desc">Of conversations, how many book a meeting?</p>
+        <input type="range" id="conv" min="1" max="100" value="10" />
+      </div>
+      <div class="slider">
+        <div class="head"><span class="name">Meeting Show Rate</span><span class="val" id="v-show">70%</span></div>
+        <p class="desc">How many booked meetings actually happen?</p>
+        <input type="range" id="show" min="1" max="100" value="70" />
+      </div>
+      <div class="slider">
+        <div class="head"><span class="name">Close Rate</span><span class="val" id="v-close">20%</span></div>
+        <p class="desc">Meetings held to closed deal.</p>
+        <input type="range" id="close" min="1" max="100" value="20" />
+      </div>
+
+      <div class="results">
+        <h3>Results</h3>
+        <div class="kv"><span class="k">Deals Needed / Month</span><span class="v" id="r-deals">—</span></div>
+        <div class="kv"><span class="k">Meetings Held Needed</span><span class="v" id="r-held">—</span></div>
+        <div class="kv"><span class="k">Meetings Booked Needed</span><span class="v" id="r-booked">—</span></div>
+        <div class="kv"><span class="k">Conversations Needed</span><span class="v" id="r-conv">—</span></div>
+        <div class="kv"><span class="k">Total Dials / Month</span><span class="v" id="r-dials">—</span></div>
+      </div>
+
+      <div class="headline">
+        <div class="l">Dials / Day per Rep</div>
+        <div class="big" id="r-perday">—</div>
+        <div class="gap" id="r-gap"></div>
+      </div>
+    </div>
+
+    <p class="note">These calculations show the mathematical relationship between activity and results. Real outcomes vary with list quality, messaging, and execution — but on the phone the environment is controlled enough that the math holds up. It shows the levers you can pull to hit your goal.</p>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const num = (id) => Number($(id).value) || 0;
+    const WORKING_DAYS = 22;
+
+    function calc() {
+      const rev = num("rev"), deal = num("deal"), reps = Math.max(1, num("reps")), cur = num("cur");
+      const connect = num("connect"), conv = num("conv"), show = num("show"), close = num("close");
+      $("v-connect").textContent = connect + "%"; $("v-conv").textContent = conv + "%";
+      $("v-show").textContent = show + "%"; $("v-close").textContent = close + "%";
+
+      const deals = deal > 0 ? Math.ceil(rev / deal) : 0;
+      const held = Math.ceil(deals / (close / 100));
+      const booked = Math.ceil(held / (show / 100));
+      const conversations = Math.ceil(booked / (conv / 100));
+      const dials = Math.ceil(conversations / (connect / 100));
+      const perDay = Math.ceil(dials / WORKING_DAYS / reps);
+
+      $("r-deals").textContent = deals.toLocaleString();
+      $("r-held").textContent = held.toLocaleString();
+      $("r-booked").textContent = booked.toLocaleString();
+      $("r-conv").textContent = conversations.toLocaleString();
+      $("r-dials").textContent = dials.toLocaleString();
+      $("r-perday").textContent = perDay.toLocaleString();
+
+      const gapEl = $("r-gap");
+      if (cur > 0) {
+        const gap = perDay - cur;
+        gapEl.textContent = gap > 0 ? `You're ${gap.toLocaleString()} dials/day short.` : `You're ${Math.abs(gap).toLocaleString()} dials/day ahead of target.`;
+        gapEl.className = "gap " + (gap > 0 ? "over" : "under");
+      } else { gapEl.textContent = ""; gapEl.className = "gap"; }
+    }
+
+    document.querySelectorAll("input").forEach((el) => el.addEventListener("input", calc));
+    calc();
+  </script>
+</body>
+</html>

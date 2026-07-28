@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Signal Platform — Joel Martinez</title>
+  <meta name="description" content="An eight-stage healthcare data platform: practice intelligence, billing, care-team, and compliance signals in one Postgres pipeline.">
+  <meta property="og:title" content="Clinical Signal Platform">
+  <meta property="og:description" content="Multi-source healthcare data engineering — 4,948 practices, federal exclusion screening with zero misses.">
+  <meta property="og:type" content="article">
+  <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="topbar reveal d1">
+      <a class="back" href="/"><span class="ar">←</span> Joel Martinez</a>
+      <span class="avail"><span class="dot"></span>Seattle</span>
+    </header>
+
+    <section class="detail-hero">
+      <p class="kicker reveal d2">The Workshop · 08</p>
+      <h1 class="detail-title reveal d3">Clinical Signal Platform</h1>
+      <p class="detail-lede reveal d4">An eight-stage data platform for a chronic-care company — practice intelligence, billing, care-team, and compliance signals pulled from many sources into one pipeline.</p>
+      <div class="tags reveal d5">
+        <span class="tag soon">Python</span>
+        <span class="tag soon">Postgres</span>
+        <span class="tag soon">LLM extraction</span>
+        <span class="tag soon">Data governance</span>
+      </div>
+    </section>
+
+    <div class="stat-band">
+      <div class="stat"><div class="big">4,948</div><div class="cap">practices loaded from vendor + public sources</div></div>
+      <div class="stat"><div class="big">0</div><div class="cap">exclusion misses across 4,561 providers screened against a live federal dataset</div></div>
+      <div class="stat"><div class="big">8</div><div class="cap">data blocks in one pipeline: intelligence, billing, care-team, compliance</div></div>
+    </div>
+
+    <div class="detail-body">
+      <div class="block">
+        <h2>The problem</h2>
+        <p>A chronic-care-management company needed one signal-driven data platform pulling practice intelligence, billing behavior, care-team makeup, and compliance status from a mix of public and vendor sources — instead of stitching spreadsheets together by hand every time they wanted to target.</p>
+      </div>
+      <div class="block">
+        <h2>What I built</h2>
+        <p>An eight-stage pipeline, Postgres-backed, that flows from foundation data through site classification, job-posting signals, care-team mapping, billing signals, federal exclusion screening, competitive density, and contact enrichment. An LLM extraction step pulls structured facts off scraped practice sites; a governance layer — run, event, and sync audit logs — tracks every stage, so every signal has provenance and full data lineage. It syncs to the CRM on a schedule.</p>
+      </div>
+      <div class="block">
+        <h2>The result</h2>
+        <ul class="results-list">
+          <li>4,948 practices and 8,110 contacts loaded, with 100% of contacts linked to a practice by a stable identifier — no fuzzy matching.</li>
+          <li>2,569 care-team members mapped across 1,434 practices.</li>
+          <li>0 federal exclusion matches across 4,561 providers screened against a live ~80,000-record government dataset.</li>
+          <li>Competitive density computed for every practice in the set.</li>
+        </ul>
+        <p class="caveat">Built and run end-to-end — I frame this as a platform I built and operated, not a hands-off production service.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot-grid">
+        <nav class="foot-links">
+          <a href="mailto:joel@pushtomain.xyz">Email</a>
+          <a href="https://www.linkedin.com/in/joelrmartinez/">LinkedIn</a>
+          <a href="https://github.com/saiwrd">GitHub</a>
+          <a href="https://x.com/itsjoelmartinez">X</a>
+        </nav>
+        <p class="colophon">
+          Handwritten HTML. Self-hosted type (Apfel Grotezk by Collletttivo).
+          Shipped on Cloudflare. <span class="wordmark">push to main</span> · © 2026
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

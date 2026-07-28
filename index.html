@@ -3,64 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joel Martinez</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>Joel Martinez — Go-to-market engineer</title>
+  <meta name="description" content="Joel Martinez builds go-to-market systems: signal engines, campaign infrastructure, and the automation that does the work of a team. Building things and writing about it.">
+  <meta property="og:title" content="Joel Martinez — Go-to-market engineer">
+  <meta property="og:description" content="Building go-to-market systems. Writing about what AI is actually good for.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pushtomain.xyz">
+  <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="site">
+  <div class="wrap">
 
-    <aside class="sidebar">
-      <h1>Joel Martinez</h1>
-      <p class="tagline">Building things and writing about it.</p>
-      <nav>
-        <a href="https://www.linkedin.com/in/joelrmartinez/" class="arrow">LinkedIn</a>
-        <a href="https://github.com/saiwrd" class="arrow">GitHub</a>
-        <a href="https://x.com/itsjoelmartinez" class="arrow">X</a>
-      </nav>
-    </aside>
+    <header class="topbar reveal d1">
+      <span class="mark">push to main</span>
+      <span class="avail"><span class="dot"></span>Seattle</span>
+    </header>
 
-    <main class="content">
-
-      <div class="section">
-        <p>Hey.</p>
-        <p>I'm Joel. I run a small AI-powered sales agency and build software on the side. Most of my work lives at the intersection of sales, automation, and figuring out what AI is actually good for (vs. what people claim it's good for).</p>
-        <p>This is where I share the things I'm working on.</p>
+    <section class="hero" style="border:none;padding-top:clamp(3.5rem,11vh,8.5rem)">
+      <div>
+        <p class="kicker reveal d2">Joel Martinez — Go-to-market engineer</p>
+        <h1 class="display">
+          <span class="reveal d3">Build the thing.</span>
+          <span class="line2 reveal d4">Push to main.</span>
+        </h1>
       </div>
+      <img class="portrait reveal d5" src="/assets/joel.jpg" alt="Joel Martinez">
+    </section>
 
-      <hr>
+    <div class="intro reveal d6">
+      <p class="lede">I build go-to-market systems — signal engines, campaign infrastructure, and the automation that does the work of a whole team.</p>
+      <p>Mostly I'm figuring out what AI is <em>actually</em> good for, versus what people claim it's good for. This is where I ship things and write about them.</p>
+    </div>
 
-      <div class="section">
-        <h2>Projects</h2>
-        <ul class="items">
-          <li><a href="#">Cassette</a> — Desktop app for recording and transcribing meetings. Electron, Whisper, retro Mac aesthetic.</li>
-          <li><a href="#">Punch GTM</a> — AI-powered sales agency. Pain-based segmentation, multi-channel outbound.</li>
-        </ul>
+    <section>
+      <p class="label">The Three Rings — how the work fits together</p>
+      <div class="rings">
+        <div class="ring">
+          <span class="ring-num">01</span>
+          <span class="ring-name">The Signal</span>
+          <p>Propensity models and signal engines that find who's worth talking to — the moment they're worth it.</p>
+        </div>
+        <div class="ring">
+          <span class="ring-num">02</span>
+          <span class="ring-name">The Send</span>
+          <p>Campaigns and channels that turn signal into real conversations.</p>
+        </div>
+        <div class="ring">
+          <span class="ring-num">03</span>
+          <span class="ring-name">The Rails</span>
+          <p>The governance and plumbing that keeps it all running without me.</p>
+        </div>
       </div>
+    </section>
 
-      <hr>
+    <section class="work">
+      <p class="label">The Circus — a suite of GTM intelligence tools</p>
+      <div class="rows">
 
-      <div class="section">
-        <h2>Articles</h2>
-        <ul class="items">
-          <li><a href="https://x.com/itsjoelmartinez/status/2010982914012377483" class="arrow">Dumb Questions I Asked Claude Code</a></li>
-          <li><a href="https://x.com/itsjoelmartinez/status/1838127824064094614" class="arrow">What is Rizz Dev?</a></li>
-          <li><a href="https://x.com/itsjoelmartinez/status/1833027707430736240" class="arrow">The Opposite of a Business Truth is Another Business Truth</a></li>
-        </ul>
+        <a class="row" href="/work/merlin/">
+          <span class="num">01</span>
+          <span class="body">
+            <span class="name">Merlin</span>
+            <span class="desc">Finds companies the moment they raise capital and scores each with an AI propensity model. A signal engine built entirely on Cloudflare — durable, scheduled, serverless.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Cloudflare</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/lamplighter/">
+          <span class="num">02</span>
+          <span class="body">
+            <span class="name">Lamplighter</span>
+            <span class="desc">Type any company and see its go-to-market stack — what they run, who they buy from — fingerprinted live from the edge on Cloudflare.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Cloudflare</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/math-of-sales/">
+          <span class="num">03</span>
+          <span class="body">
+            <span class="name">The Math of Sales</span>
+            <span class="desc">An interactive calculator for outbound: exactly what it takes — dials, conversations, meetings — to hit a revenue goal by cold calling.</span>
+          </span>
+          <span class="meta"><span class="tag live">Live</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/cassette/">
+          <span class="num">04</span>
+          <span class="body">
+            <span class="name">Cassette</span>
+            <span class="desc">Desktop app for recording and transcribing meetings. Tauri + Whisper, designed to look like it belongs on a 1991 Macintosh.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Building</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/punch-gtm/">
+          <span class="num">05</span>
+          <span class="body">
+            <span class="name">Punch GTM</span>
+            <span class="desc">AI-powered sales agency. Pain-based segmentation and multi-channel outbound, run mostly by automation.</span>
+          </span>
+          <span class="meta"><span class="arrow">↗</span></span>
+        </a>
+
       </div>
+    </section>
 
-      <hr>
+    <section class="work">
+      <p class="label">The Workshop — systems and programs I built for clients</p>
+      <div class="rows">
 
-      <div class="section">
-        <h2>Podcast Appearances</h2>
-        <ul class="items">
-          <li><a href="#">Coming soon</a></li>
-        </ul>
+        <a class="row" href="/work/email-from-zero/">
+          <span class="num">06</span>
+          <span class="body">
+            <span class="name">Email From Zero</span>
+            <span class="desc">Stood up cold email as a brand-new channel for a phone-only mineral-rights company that had sworn off it — and turned a standing start into real positive replies and opportunities.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Cold-email infra</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/integrators-exit/">
+          <span class="num">07</span>
+          <span class="body">
+            <span class="name">Integrator's Exit</span>
+            <span class="desc">A full custom pipeline for an M&A-arbitrage thesis no one else was chasing: sourcing → AI qualification → a seven-dimension propensity model → enrichment → CRM. 1,336 companies scored, 778 contacts.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Python · LLM</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/clinical-signal-platform/">
+          <span class="num">08</span>
+          <span class="body">
+            <span class="name">Clinical Signal Platform</span>
+            <span class="desc">An eight-stage healthcare data platform with a real governance layer — audit logs and data lineage across every stage — plus compliance screening of 4,561 providers against a live federal exclusion dataset, zero misses.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Postgres · Governance</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/sec-form-d-pipeline/">
+          <span class="num">09</span>
+          <span class="body">
+            <span class="name">SEC Form D Pipeline</span>
+            <span class="desc">Pulls newly-funded companies straight from SEC EDGAR and qualifies each with a two-tier AI agent. Filtered 14,749 targets from ~99,000 raw filings in about 24 seconds.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Python · SEC EDGAR</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/signal-index-engine/">
+          <span class="num">10</span>
+          <span class="body">
+            <span class="name">Signal-Index Engine</span>
+            <span class="desc">A propensity engine that scores thousands of brands on composite health signals, plus a crash-safe enrichment pipeline that resumes from exactly where it died. Architected for multi-tenant; 3,400+ contacts verified.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Python</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/reply-slack-relay/">
+          <span class="num">11</span>
+          <span class="body">
+            <span class="name">Reply → Slack Relay</span>
+            <span class="desc">A single Cloudflare Worker that turns cold-email replies into rich Slack alerts for any client — a new client goes live in about two minutes, one secret and one webhook.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Cloudflare Worker</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/crm-sync/">
+          <span class="num">12</span>
+          <span class="body">
+            <span class="name">CRM Sync Automations</span>
+            <span class="desc">Idempotent, state-tracked cron jobs that sync LinkedIn and cold-email activity into HubSpot with governance over what actually lands — auto-created contacts, notes, tasks, and routed hot replies. 2,214 leads across 10 campaigns.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Python · HubSpot</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/skill-library/">
+          <span class="num">13</span>
+          <span class="body">
+            <span class="name">GTM Skill Library</span>
+            <span class="desc">A reusable harness that brings governance to GTM sprawl — uniform interfaces and documented API contracts so recurring operations run the same way every time. Enrichment verified at an 80% hit rate.</span>
+          </span>
+          <span class="meta"><span class="tag soon">CLI</span><span class="arrow">↗</span></span>
+        </a>
+
+        <a class="row" href="/work/data-companion-factory/">
+          <span class="num">14</span>
+          <span class="body">
+            <span class="name">Data-Companion Factory</span>
+            <span class="desc">Spins up a self-serve data project per client, so non-technical teammates can query their own campaign data without going through me. Four client instances built from one template.</span>
+          </span>
+          <span class="meta"><span class="tag soon">Template</span><span class="arrow">↗</span></span>
+        </a>
+
       </div>
+    </section>
 
-    </main>
+    <section class="writing">
+      <p class="label">Writing</p>
+      <a href="https://x.com/itsjoelmartinez/status/2010982914012377483">Dumb Questions I Asked Claude Code <span class="src">X ↗</span></a>
+      <a href="https://x.com/itsjoelmartinez/status/1838127824064094614">What is Rizz Dev? <span class="src">X ↗</span></a>
+      <a href="https://x.com/itsjoelmartinez/status/1833027707430736240">The Opposite of a Business Truth is Another Business Truth <span class="src">X ↗</span></a>
+    </section>
+
+    <footer>
+      <div class="foot-grid">
+        <nav class="foot-links">
+          <a href="mailto:joel@pushtomain.xyz">Email</a>
+          <a href="https://www.linkedin.com/in/joelrmartinez/">LinkedIn</a>
+          <a href="https://github.com/saiwrd">GitHub</a>
+          <a href="https://x.com/itsjoelmartinez">X</a>
+        </nav>
+        <p class="colophon">
+          Handwritten HTML. Self-hosted type (Apfel Grotezk by Collletttivo).
+          Shipped on Cloudflare. <span class="wordmark">push to main</span> · © 2026
+        </p>
+      </div>
+    </footer>
 
   </div>
 </body>

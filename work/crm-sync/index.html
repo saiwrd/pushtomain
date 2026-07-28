@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Sync Automations — Joel Martinez</title>
+  <meta name="description" content="Idempotent cron jobs that push LinkedIn and cold-email activity into HubSpot — auto-creating contacts, notes, and tasks, and routing hot replies.">
+  <meta property="og:title" content="CRM Sync Automations">
+  <meta property="og:description" content="Getting outbound activity into the CRM with the context a rep needs to act — 2,214 leads synced across 10 campaigns.">
+  <meta property="og:type" content="article">
+  <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="topbar reveal d1">
+      <a class="back" href="/"><span class="ar">←</span> Joel Martinez</a>
+      <span class="avail"><span class="dot"></span>Seattle</span>
+    </header>
+
+    <section class="detail-hero">
+      <p class="kicker reveal d2">The Workshop · 12</p>
+      <h1 class="detail-title reveal d3">CRM Sync Automations</h1>
+      <p class="detail-lede reveal d4">Idempotent cron jobs that push LinkedIn and cold-email activity into HubSpot — auto-creating contacts, notes, and tasks, and routing hot replies to a rep the moment they land.</p>
+      <div class="tags reveal d5">
+        <span class="tag soon">Python</span>
+        <span class="tag soon">HubSpot API</span>
+        <span class="tag soon">Cron</span>
+      </div>
+    </section>
+
+    <div class="stat-band">
+      <div class="stat"><div class="big">2,214</div><div class="cap">leads synced into the CRM (plus 170 cold-call leads)</div></div>
+      <div class="stat"><div class="big">10</div><div class="cap">live campaigns feeding the sync</div></div>
+      <div class="stat"><div class="big">0</div><div class="cap">duplicate records — state-tracked and fully idempotent</div></div>
+    </div>
+
+    <div class="detail-body">
+      <div class="block">
+        <h2>The problem</h2>
+        <p>LinkedIn and cold-email activity lived in separate tools and never made it into the CRM with enough context for a rep to act on. The rule was strict: a task shouldn't fire until every field it depends on is actually populated — no half-formed records nagging the team.</p>
+      </div>
+      <div class="block">
+        <h2>What I built</h2>
+        <p>A set of idempotent, state-file-tracked cron jobs that sync activity into HubSpot over its REST API — auto-creating contacts, logging notes, creating tasks, and raising a high-priority task the instant a positive reply arrives. The state tracking is really governance over what reaches the CRM: because every run knows what it's already done, re-running is safe and never duplicates.</p>
+      </div>
+      <div class="block">
+        <h2>The result</h2>
+        <ul class="results-list">
+          <li>2,214 leads synced across 10 live campaigns, plus 170 cold-call leads.</li>
+          <li>Counts come from machine-generated run records — not projections.</li>
+          <li>Hot replies routed to the right rep automatically, with full context attached.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot-grid">
+        <nav class="foot-links">
+          <a href="mailto:joel@pushtomain.xyz">Email</a>
+          <a href="https://www.linkedin.com/in/joelrmartinez/">LinkedIn</a>
+          <a href="https://github.com/saiwrd">GitHub</a>
+          <a href="https://x.com/itsjoelmartinez">X</a>
+        </nav>
+        <p class="colophon">
+          Handwritten HTML. Self-hosted type (Apfel Grotezk by Collletttivo).
+          Shipped on Cloudflare. <span class="wordmark">push to main</span> · © 2026
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

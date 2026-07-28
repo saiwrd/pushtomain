@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lamplighter — Joel Martinez</title>
+  <meta name="description" content="Type any company and see its go-to-market stack — fingerprinted live from the edge on Cloudflare.">
+  <meta property="og:title" content="Lamplighter — surveillance for go-to-market">
+  <meta property="og:description" content="Fingerprint any company's public tech stack from the edge, then read it back as a GTM take with Workers AI.">
+  <meta property="og:type" content="article">
+  <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="topbar reveal d1">
+      <a class="back" href="/"><span class="ar">←</span> Joel Martinez</a>
+      <span class="avail"><span class="dot"></span>Seattle</span>
+    </header>
+
+    <section class="detail-hero">
+      <p class="kicker reveal d2">The Circus · 02</p>
+      <h1 class="detail-title reveal d3">Lamplighter</h1>
+      <p class="detail-lede reveal d4">Type any company and see its go-to-market stack — what they run, who they buy from — fingerprinted live from the edge, then read back to you as a plain-English take.</p>
+      <div class="tags reveal d5">
+        <span class="tag soon">Cloudflare</span>
+        <span class="tag soon">Workers AI</span>
+        <span class="tag soon">Edge</span>
+      </div>
+      <a class="visit reveal d6" href="https://lamplighter.pushtomain.xyz">See it live <span class="arrow">↗</span></a>
+    </section>
+
+    <div class="detail-body">
+      <div class="block">
+        <h2>The idea</h2>
+        <p>Knowing what a company runs — their CRM, their outbound tooling, their analytics — tells you how to sell to them and who they already trust. That intelligence usually lives behind a paid tool. Lamplighter does it live, from a URL, for free.</p>
+      </div>
+      <div class="block">
+        <h2>What I built</h2>
+        <p>A Cloudflare Worker that fetches a company's public surface and fingerprints the go-to-market technology it exposes. Then Workers AI does a "field read" — it takes the raw list of detected tools and summarizes it into a short GTM interpretation: what this stack implies about how they operate and where an opening might be.</p>
+        <p>All of it runs at the edge. No scraper farm, no external infrastructure — just a request in and a read back.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot-grid">
+        <nav class="foot-links">
+          <a href="mailto:joel@pushtomain.xyz">Email</a>
+          <a href="https://www.linkedin.com/in/joelrmartinez/">LinkedIn</a>
+          <a href="https://github.com/saiwrd">GitHub</a>
+          <a href="https://x.com/itsjoelmartinez">X</a>
+        </nav>
+        <p class="colophon">
+          Handwritten HTML. Self-hosted type (Apfel Grotezk by Collletttivo).
+          Shipped on Cloudflare. <span class="wordmark">push to main</span> · © 2026
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

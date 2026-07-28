@@ -1,0 +1,20 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "pushtomain",
+  "compatibility_date": "2026-07-27",
+
+  // Custom domains (zone active on Cloudflare as of 2026-07-27).
+  "routes": [
+    { "pattern": "pushtomain.xyz", "custom_domain": true },
+    { "pattern": "www.pushtomain.xyz", "custom_domain": true }
+  ],
+
+  // Assets-only site — no Worker script, just static files from the repo root.
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+
+  "observability": { "enabled": true }
+}

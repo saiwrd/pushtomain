@@ -1,0 +1,10 @@
+.git
+.wrangler
+.gitignore
+.assetsignore
+wrangler.jsonc
+vercel.json
+clairevo-reference.png
+pushtomain-desktop.png
+pushtomain-mobile.png
+pushtomain-sections.png
