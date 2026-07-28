@@ -1,6 +1,6 @@
 # GTM Skill Library
 
-*The Workshop · 13 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 14 — Joel Martinez, pushtomain.xyz*
 
 > A reusable harness that packages recurring go-to-market operations — enrichment, campaign setup, reply classification, domain provisioning — as parameterized skills invoked by trigger phrase.
 

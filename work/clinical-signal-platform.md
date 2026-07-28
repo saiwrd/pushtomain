@@ -1,6 +1,6 @@
 # Clinical Signal Platform
 
-*The Workshop · 08 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 09 — Joel Martinez, pushtomain.xyz*
 
 > An eight-stage data platform for a chronic-care company — practice intelligence, billing, care-team, and compliance signals pulled from many sources into one pipeline.
 

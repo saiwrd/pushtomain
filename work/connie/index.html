@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connie — Joel Martinez</title>
+  <meta name="description" content="An open-source Go engine that scans Ashby, Greenhouse, and Lever job boards concurrently and remembers every posting it has ever seen.">
+  <meta property="og:title" content="Connie — the Circus's memory for job boards">
+  <meta property="og:description" content="Multi-ATS scanner with a SQLite Registry: first_seen, last_seen, and a careful closed_at lifecycle. Job postings as hiring signals.">
+  <meta property="og:type" content="article">
+  <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="topbar reveal d1">
+      <a class="back" href="/"><span class="ar">←</span> Joel Martinez</a>
+      <span class="avail"><span class="dot"></span>Seattle</span>
+    </header>
+
+    <section class="detail-hero">
+      <p class="kicker reveal d2">The Circus · 03</p>
+      <h1 class="detail-title reveal d3">Connie</h1>
+      <p class="detail-lede reveal d4">An open-source Go engine that scans Ashby, Greenhouse, and Lever job boards concurrently — and remembers every posting she has ever seen. Job postings are hiring signals; Connie is the memory that makes them legible.</p>
+      <div class="tags reveal d5">
+        <span class="tag soon">Go</span>
+        <span class="tag soon">SQLite</span>
+        <span class="tag soon">Concurrency</span>
+        <span class="tag live">Open source</span>
+      </div>
+      <a class="visit reveal d6" href="https://github.com/saiwrd/connie">Read the code <span class="arrow">↗</span></a>
+    </section>
+
+    <div class="stat-band">
+      <div class="stat"><div class="big">3</div><div class="cap">ATS platforms behind one adapter interface — more drop in at ~100 lines each</div></div>
+      <div class="stat"><div class="big">1</div><div class="cap">static binary, one direct dependency, cross-compiles anywhere</div></div>
+      <div class="stat"><div class="big">0</div><div class="cap">mutexes in the worker pool — channel-owned state, proven by the race detector</div></div>
+    </div>
+
+    <div class="detail-body">
+      <div class="block">
+        <h2>The idea</h2>
+        <p>A job posting is a buying signal: it says what a company is about to invest in, the day they decide it. The public, unauthenticated APIs of the major applicant-tracking systems expose tens of thousands of boards — but a scraper that just fetches them tells you what exists, not <em>what changed</em>. The interesting tool is the one with memory.</p>
+        <p>Connie is named for Connie Sachs of <em>Tinker Tailor Soldier Spy</em> — the researcher whose head was the Registry. Ask her what's new, and she compares today against everything she has ever seen.</p>
+      </div>
+      <div class="block">
+        <h2>What I built</h2>
+        <p>A Go CLI with three faces: <code>scan</code> fetches thousands of boards through a bounded worker pool (a single aggregator goroutine owns all mutable state — no mutexes, proven under the race detector), filters by fuzzy title or description regex, and exports CSV/JSON. <code>discover</code> harvests board slugs from the Wayback Machine's CDX index, shape-filters the archive noise, and probes survivors against the live ATS. And the Registry — SQLite, one transaction per scan — tracks <code>first_seen</code>, <code>last_seen</code>, and a deliberately conservative <code>closed_at</code> lifecycle: only a full unfiltered scan may declare a posting gone, scoped to the boards it actually covered, and a posting that reappears is reopened.</p>
+        <p>Built test-first throughout: fixtures recorded from one live session per API, ported semantics pinned table-for-table from the Python reference it grew out of, and a live smoke suite gated behind a build tag so CI never touches the network.</p>
+      </div>
+      <div class="block">
+        <h2>The receipt</h2>
+        <ul class="results-list">
+          <li>On her second-ever run — 67 seed boards, three ATSes, zero errors — she surfaced a remote "AI GTM Architect (Revenue Operations)" posting that an Ashby-only sweep structurally could not see.</li>
+          <li>Run her on a cron and the Registry diff becomes a feed: who started hiring for what, the day it opened.</li>
+          <li>Open source at <a href="https://github.com/saiwrd/connie">github.com/saiwrd/connie</a> — the README's design notes are half the point.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot-grid">
+        <nav class="foot-links">
+          <a href="mailto:joel@pushtomain.xyz">Email</a>
+          <a href="https://www.linkedin.com/in/joelrmartinez/">LinkedIn</a>
+          <a href="https://github.com/saiwrd">GitHub</a>
+          <a href="https://x.com/itsjoelmartinez">X</a>
+        </nav>
+        <p class="colophon">
+          Handwritten HTML. Self-hosted type (Apfel Grotezk by Collletttivo).
+          Shipped on Cloudflare. <span class="wordmark">push to main</span> · © 2026
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

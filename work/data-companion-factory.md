@@ -1,6 +1,6 @@
 # Data-Companion Factory
 
-*The Workshop · 14 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 15 — Joel Martinez, pushtomain.xyz*
 
 > A repeatable factory that spins up a self-serve data project for each client, so non-technical teammates can query their own campaign data without going through me.
 

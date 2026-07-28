@@ -1,6 +1,6 @@
 # SEC Form D Pipeline
 
-*The Workshop · 09 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 10 — Joel Martinez, pushtomain.xyz*
 
 > Pulls newly-funded companies straight from SEC EDGAR and qualifies each with a two-tier AI agent — going to the source instead of a brittle third-party tracker.
 

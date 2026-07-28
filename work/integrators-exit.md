@@ -1,6 +1,6 @@
 # Integrator's Exit
 
-*The Workshop · 07 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 08 — Joel Martinez, pushtomain.xyz*
 
 > A full custom pipeline built around an M&A / valuation-arbitrage thesis no one else was targeting — sourcing, AI qualification, a seven-dimension propensity model, and enrichment, all the way into the CRM.
 

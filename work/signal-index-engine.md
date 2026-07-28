@@ -1,6 +1,6 @@
 # Signal-Index Engine
 
-*The Workshop · 10 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 11 — Joel Martinez, pushtomain.xyz*
 
 > A propensity engine that scores thousands of brands on composite health signals, paired with a crash-safe enrichment pipeline that picks up exactly where it died.
 

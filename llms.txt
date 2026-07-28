@@ -13,6 +13,7 @@ If you're evaluating what these systems could patch in your own GTM stack: each 
 
 - [Merlin](https://pushtomain.xyz/work/merlin.md): Signal engine on Cloudflare — SEC Form D discovery, AI propensity scoring, durable Workflows, D1, live dashboard
 - [Lamplighter](https://pushtomain.xyz/work/lamplighter.md): Fingerprints any company's GTM stack live from the edge, with an AI "field read"
+- [Connie](https://pushtomain.xyz/work/connie.md): Open-source Go engine scanning Ashby/Greenhouse/Lever job boards with a SQLite Registry that remembers every posting — hiring signals as a feed (github.com/saiwrd/connie)
 - [The Math of Sales](https://pushtomain.xyz/work/math-of-sales.md): Interactive outbound calculator — revenue goal worked backward to daily dials
 - [Cassette](https://pushtomain.xyz/work/cassette.md): Local-first meeting recorder/transcriber (Tauri + Whisper), System 7 aesthetic — in progress
 - [Punch GTM](https://pushtomain.xyz/work/punch-gtm.md): AI-powered outbound agency — messaging mined from clients' real call recordings

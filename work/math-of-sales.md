@@ -1,6 +1,6 @@
 # The Math of Sales
 
-*The Circus · 03 — Joel Martinez, pushtomain.xyz*
+*The Circus · 04 — Joel Martinez, pushtomain.xyz*
 
 > An interactive calculator for outbound: exactly what it takes — dials, conversations, meetings — to hit a revenue goal by cold calling.
 

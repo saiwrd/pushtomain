@@ -1,6 +1,6 @@
 # Punch GTM
 
-*The Circus · 05 — Joel Martinez, pushtomain.xyz*
+*The Circus · 06 — Joel Martinez, pushtomain.xyz*
 
 > An AI-powered sales agency. Pain-based segmentation and multi-channel outbound, run mostly by automation — with messaging mined from what actually works on real calls.
 

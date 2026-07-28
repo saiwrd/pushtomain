@@ -1,6 +1,6 @@
 # Email From Zero
 
-*The Workshop · 06 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 07 — Joel Martinez, pushtomain.xyz*
 
 > Stood up cold email as a brand-new channel for a mineral-rights company that ran entirely on the phone and had sworn off email — and turned it into real positive replies and opportunities.
 

@@ -1,6 +1,6 @@
 # Reply → Slack Relay
 
-*The Workshop · 11 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 12 — Joel Martinez, pushtomain.xyz*
 
 > A single Cloudflare Worker that turns cold-email replies into rich Slack alerts for any client — one deployment serving everyone, instead of a bespoke webhook each time.
 

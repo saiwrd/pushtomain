@@ -1,6 +1,6 @@
 # CRM Sync Automations
 
-*The Workshop · 12 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 13 — Joel Martinez, pushtomain.xyz*
 
 > Idempotent cron jobs that push LinkedIn and cold-email activity into HubSpot — auto-creating contacts, notes, and tasks, and routing hot replies to a rep the moment they land.
 
