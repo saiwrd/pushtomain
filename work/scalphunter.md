@@ -1,4 +1,4 @@
-# Integrator's Exit
+# Scalphunter
 
 *The Workshop · 08 — Joel Martinez, pushtomain.xyz*
 
@@ -28,5 +28,5 @@ An end-to-end pipeline: LinkedIn sourcing → a fast AI "gut-check" filter (a sm
 I keep the honest miss in the story on purpose — the diagnosis is as much a part of the work as the build.
 
 ---
-HTML version: https://pushtomain.xyz/work/integrators-exit/
+HTML version: https://pushtomain.xyz/work/scalphunter/
 Contact: joel@pushtomain.xyz · https://www.linkedin.com/in/joelrmartinez/

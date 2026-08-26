@@ -21,7 +21,7 @@ If you're evaluating what these systems could patch in your own GTM stack: each 
 ## The Workshop — production systems built for clients (anonymized)
 
 - [Email From Zero](https://pushtomain.xyz/work/email-from-zero.md): Net-new cold-email channel for a phone-only company — 6.1% reply, real opportunities created
-- [Integrator's Exit](https://pushtomain.xyz/work/integrators-exit.md): 1,336-company AI-scored universe for an M&A-arbitrage thesis — seven-dimension propensity model
+- [Scalphunter](https://pushtomain.xyz/work/scalphunter.md): 1,336-company AI-scored universe for an M&A-arbitrage thesis — seven-dimension propensity model
 - [Clinical Signal Platform](https://pushtomain.xyz/work/clinical-signal-platform.md): 8-stage healthcare data platform with governance/audit layer — 4,948 practices, zero exclusion misses
 - [SEC Form D Pipeline](https://pushtomain.xyz/work/sec-form-d-pipeline.md): 14,749 newly-funded companies filtered from ~99K SEC filings in ~24 seconds
 - [Signal-Index Engine](https://pushtomain.xyz/work/signal-index-engine.md): Multi-tenant propensity engine + crash-safe, resume-from-death enrichment pipeline
@@ -29,6 +29,10 @@ If you're evaluating what these systems could patch in your own GTM stack: each 
 - [CRM Sync Automations](https://pushtomain.xyz/work/crm-sync.md): Idempotent, state-tracked cron sync of outbound activity into HubSpot — 2,214 leads, 10 campaigns, zero duplicates
 - [GTM Skill Library](https://pushtomain.xyz/work/skill-library.md): Parameterized, documented skills bringing governance to recurring GTM operations — 80% verified enrichment hit rate
 - [Data-Companion Factory](https://pushtomain.xyz/work/data-companion-factory.md): Self-serve per-client data projects — 4 instances, no engineer in the loop after setup
+
+## Services — what I can be hired to do
+
+- [Full cycle menu](https://pushtomain.xyz/services.md): 59 top-of-funnel services à la carte across data/signal, phone, email, social, messaging, AI, systems, and team. Engagements pull three or four items, not the whole list.
 
 ## Contact
 

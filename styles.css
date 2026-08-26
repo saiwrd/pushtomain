@@ -298,3 +298,31 @@ footer { border-top: 1px solid var(--rule); padding: clamp(2.5rem,6vw,4rem) 0 cl
 @media (max-width: 720px) {
   .stat-band { grid-template-columns: 1fr 1fr; }
 }
+
+/* ── Services · full cycle menu ── */
+.menu-field { border-top: 1.5px solid var(--ink); padding-top: clamp(1.1rem, 3vw, 1.8rem); }
+.menu-field ul {
+  list-style: none; columns: 3; column-gap: clamp(1.2rem, 3vw, 2.6rem);
+  column-rule: 1px solid var(--rule);
+}
+.menu-field li {
+  break-inside: avoid; display: flex; gap: 0.55rem; align-items: baseline;
+  font-size: 0.93rem; line-height: 1.4; padding: 0.46rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.menu-field .pick {
+  flex: 0 0 auto; width: 9px; height: 9px; margin-top: 0.32em;
+  border: 1.5px solid var(--green);
+}
+.menu-field .what { flex: 1 1 auto; }
+.menu-field .tag {
+  flex: 0 0 auto; font-size: 0.62rem; letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; white-space: nowrap; padding-top: 0.12em;
+}
+@media (max-width: 900px) { .menu-field ul { columns: 2; } }
+@media (max-width: 560px) { .menu-field ul { columns: 1; } }
+.menu-note {
+  padding-top: clamp(1.1rem, 3vw, 1.7rem);
+  color: var(--ink-2); font-size: 0.96rem; max-width: 60ch; text-wrap: pretty;
+}
+.menu-note em { font-style: normal; color: var(--green); font-weight: 500; }

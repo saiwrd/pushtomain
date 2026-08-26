@@ -1,3 +1,8 @@
 .wrangler/
 .DS_Store
 node_modules/
+
+# working files — never publish (call prep, resume, client data)
+plans/
+.DS_Store
+**/.DS_Store
