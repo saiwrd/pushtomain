@@ -1,0 +1,6 @@
+seed: https://growthequityinterviewguide.com/private-equity/private-equity-primer/technology-private-equity-firms
+firms: 18
+firm-company pairs: 2084
+unique accounts: 1965
+failures:
+none
