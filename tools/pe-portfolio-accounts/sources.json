@@ -1,0 +1,4 @@
+{
+  "notes": "Extra PE portfolio URLs beyond the GEIG seed list in firms.py. Add via: python3 build.py --add-url URL --name 'Firm Name'  Accel-KKR is already a seed firm (https://www.accel-kkr.com/portfolio/).",
+  "extra_firms": []
+}
