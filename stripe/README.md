@@ -19,4 +19,4 @@ python3 deploy.py --live
 
 Amounts in the catalog are cents. Changing a price archives the old Stripe price and creates a new one with the same lookup key. Customers and invoices stay in the environment that created them.
 
-The GTM retainer has two prices: $7,000 per month, or $62,664 prepaid for 12 months (25.4% off). Prepaid is a one-time invoice, not an auto-renewing subscription. Steer prepaid to ACH; card fees on that amount are large.
+The GTM retainer has two prices: $7,000 per month, or $15,666 prepaid for 3 months (25.4% off). Prepaid is a one-time invoice, not an auto-renewing subscription. Steer prepaid to ACH.

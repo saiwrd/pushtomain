@@ -27,7 +27,7 @@
     {
       "recipe_id": "gtm-retainer",
       "name": "GTM retainer",
-      "description": "$7,000 per month, or $62,664 prepaid for 12 months (25.4% off). ACH preferred on prepaid.",
+      "description": "$7,000 per month, or $15,666 prepaid for 3 months (25.4% off). ACH preferred on prepaid.",
       "active": true,
       "prices": [
         {
@@ -38,9 +38,9 @@
           "interval": "month"
         },
         {
-          "lookup_key": "gtm-retainer-prepaid-12mo-usd",
-          "nickname": "Prepaid 12 months (25.4% off)",
-          "unit_amount": 6266400,
+          "lookup_key": "gtm-retainer-prepaid-3mo-usd",
+          "nickname": "Prepaid 3 months (25.4% off)",
+          "unit_amount": 1566600,
           "currency": "usd"
         }
       ]
