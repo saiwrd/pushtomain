@@ -3,9 +3,10 @@
   "invoice_defaults": {
     "collection_method": "send_invoice",
     "days_until_due": 7,
-    "payment_method_types": ["card", "link"]
+    "payment_method_types": ["us_bank_account", "card", "link"]
   },
   "payment_methods": {
+    "enabled": ["us_bank_account", "card", "link"],
     "disabled": ["klarna"]
   },
   "products": [
@@ -25,16 +26,22 @@
     },
     {
       "recipe_id": "gtm-retainer",
-      "name": "Monthly GTM retainer",
-      "description": "Recurring monthly retainer",
+      "name": "GTM retainer",
+      "description": "$7,000 per month, or $62,664 prepaid for 12 months (25.4% off). ACH preferred on prepaid.",
       "active": true,
       "prices": [
         {
           "lookup_key": "gtm-retainer-usd-month",
-          "nickname": "Monthly retainer",
-          "unit_amount": 400000,
+          "nickname": "Monthly",
+          "unit_amount": 700000,
           "currency": "usd",
           "interval": "month"
+        },
+        {
+          "lookup_key": "gtm-retainer-prepaid-12mo-usd",
+          "nickname": "Prepaid 12 months (25.4% off)",
+          "unit_amount": 6266400,
+          "currency": "usd"
         }
       ]
     },

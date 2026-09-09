@@ -189,41 +189,55 @@ def sync_price(secret: str, product_id: str, spec: dict, dry_run: bool) -> None:
     stripe_request(secret, "POST", "/prices", create_fields)
 
 
-def sync_disabled_payment_methods(secret: str, disabled: list[str], dry_run: bool) -> None:
-    if not disabled:
+def sync_payment_method_preferences(
+    secret: str, enabled: list[str], disabled: list[str], dry_run: bool
+) -> None:
+    if not enabled and not disabled:
         return
     if dry_run:
-        print(f"  would disable payment methods: {', '.join(disabled)}")
+        if enabled:
+            print(f"  would enable payment methods: {', '.join(enabled)}")
+        if disabled:
+            print(f"  would disable payment methods: {', '.join(disabled)}")
         return
     configs = list_all(secret, "/payment_method_configurations")
     if not configs:
         print("  no payment method configurations found")
         return
+    overlap = set(enabled) & set(disabled)
+    if overlap:
+        raise SystemExit(f"Payment methods listed as both enabled and disabled: {', '.join(sorted(overlap))}")
     for config in configs:
         if config.get("active") is False:
             continue
         fields: dict = {}
-        already_off: list[str] = []
-        turning_off: list[str] = []
+        changes: list[str] = []
+        unchanged: list[str] = []
         missing: list[str] = []
-        for method in disabled:
+
+        def apply(method: str, preference: str) -> None:
             details = config.get(method)
             if not isinstance(details, dict):
                 missing.append(method)
-                continue
+                return
             current = (details.get("display_preference") or {}).get("preference")
-            if current == "off":
-                already_off.append(method)
-                continue
-            turning_off.append(method)
-            fields[method] = {"display_preference": {"preference": "off"}}
+            if current == preference:
+                unchanged.append(f"{method}={preference}")
+                return
+            fields[method] = {"display_preference": {"preference": preference}}
+            changes.append(f"{method}->{preference}")
+
+        for method in enabled:
+            apply(method, "on")
+        for method in disabled:
+            apply(method, "off")
         label = config.get("name") or config["id"]
         if missing:
             print(f"  {label}: not on this account ({', '.join(missing)})")
-        if already_off and not turning_off:
-            print(f"  {label}: already off ({', '.join(already_off)})")
-        if turning_off:
-            print(f"  {label}: disable {', '.join(turning_off)}")
+        if unchanged and not changes:
+            print(f"  {label}: already set ({', '.join(unchanged)})")
+        if changes:
+            print(f"  {label}: {', '.join(changes)}")
             stripe_request(secret, "POST", f"/payment_method_configurations/{config['id']}", fields)
 
 
@@ -280,10 +294,11 @@ def main() -> int:
         archive_extra_prices(secret, product["id"], lookup_keys, args.dry_run)
 
     payment_methods = catalog.get("payment_methods") or {}
+    enabled = payment_methods.get("enabled") or []
     disabled = payment_methods.get("disabled") or []
-    if disabled:
+    if enabled or disabled:
         print("Payment methods:")
-        sync_disabled_payment_methods(secret, disabled, args.dry_run)
+        sync_payment_method_preferences(secret, enabled, disabled, args.dry_run)
 
     defaults = catalog.get("invoice_defaults") or {}
     if defaults:

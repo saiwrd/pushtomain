@@ -19,4 +19,4 @@ python3 deploy.py --live
 
 Amounts in the catalog are cents. Changing a price archives the old Stripe price and creates a new one with the same lookup key. Customers and invoices stay in the environment that created them.
 
-`payment_methods.disabled` is applied to the account’s payment method configurations. Klarna is turned off there so it does not show on hosted invoices or checkout. Existing open invoices may still list methods chosen when they were finalized; void and resend if you need that invoice updated.
+The GTM retainer has two prices: $7,000 per month, or $62,664 prepaid for 12 months (25.4% off). Prepaid is a one-time invoice, not an auto-renewing subscription. Steer prepaid to ACH; card fees on that amount are large.
