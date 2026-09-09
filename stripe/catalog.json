@@ -2,7 +2,11 @@
   "version": 1,
   "invoice_defaults": {
     "collection_method": "send_invoice",
-    "days_until_due": 7
+    "days_until_due": 7,
+    "payment_method_types": ["card", "link"]
+  },
+  "payment_methods": {
+    "disabled": ["klarna"]
   },
   "products": [
     {

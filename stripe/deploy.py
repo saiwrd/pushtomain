@@ -189,6 +189,44 @@ def sync_price(secret: str, product_id: str, spec: dict, dry_run: bool) -> None:
     stripe_request(secret, "POST", "/prices", create_fields)
 
 
+def sync_disabled_payment_methods(secret: str, disabled: list[str], dry_run: bool) -> None:
+    if not disabled:
+        return
+    if dry_run:
+        print(f"  would disable payment methods: {', '.join(disabled)}")
+        return
+    configs = list_all(secret, "/payment_method_configurations")
+    if not configs:
+        print("  no payment method configurations found")
+        return
+    for config in configs:
+        if config.get("active") is False:
+            continue
+        fields: dict = {}
+        already_off: list[str] = []
+        turning_off: list[str] = []
+        missing: list[str] = []
+        for method in disabled:
+            details = config.get(method)
+            if not isinstance(details, dict):
+                missing.append(method)
+                continue
+            current = (details.get("display_preference") or {}).get("preference")
+            if current == "off":
+                already_off.append(method)
+                continue
+            turning_off.append(method)
+            fields[method] = {"display_preference": {"preference": "off"}}
+        label = config.get("name") or config["id"]
+        if missing:
+            print(f"  {label}: not on this account ({', '.join(missing)})")
+        if already_off and not turning_off:
+            print(f"  {label}: already off ({', '.join(already_off)})")
+        if turning_off:
+            print(f"  {label}: disable {', '.join(turning_off)}")
+            stripe_request(secret, "POST", f"/payment_method_configurations/{config['id']}", fields)
+
+
 def archive_extra_prices(secret: str, product_id: str, keep_lookup_keys: set[str], dry_run: bool) -> None:
     extras = list_all(secret, "/prices", {"product": product_id, "active": "true"})
     for price in extras:
@@ -241,11 +279,20 @@ def main() -> int:
             sync_price(secret, product["id"], price, args.dry_run)
         archive_extra_prices(secret, product["id"], lookup_keys, args.dry_run)
 
+    payment_methods = catalog.get("payment_methods") or {}
+    disabled = payment_methods.get("disabled") or []
+    if disabled:
+        print("Payment methods:")
+        sync_disabled_payment_methods(secret, disabled, args.dry_run)
+
     defaults = catalog.get("invoice_defaults") or {}
     if defaults:
+        methods = defaults.get("payment_method_types") or []
+        method_note = f", methods {', '.join(methods)}" if methods else ""
         print(
             "Invoice defaults (used when you create invoices, not copied as account branding): "
             f"{defaults.get('collection_method')}, due in {defaults.get('days_until_due')} days"
+            f"{method_note}"
         )
     print("Done.")
     return 0
