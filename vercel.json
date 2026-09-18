@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/orchestry", "destination": "/orchestry/index.html" },
     { "source": "/orchestry/", "destination": "/orchestry/index.html" },
+    { "source": "/engineered-arts", "destination": "/engineered-arts/index.html" },
+    { "source": "/engineered-arts/", "destination": "/engineered-arts/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
