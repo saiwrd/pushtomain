@@ -71,9 +71,14 @@ Live page: https://pushtomain.xyz/services/
 - Custom pipelines built with AI
 - AI-written copy that doesn't read like it
 - Automating the work of a whole team
+- SEO built with AI and APIs
+- Referral and product growth experiments
 
 ## Systems
 
+- One source of truth for accounts, synced to every channel
+- Slack answers from customer data for reps
+- Warm-intro maps
 - CRM process design
 - HubSpot and Salesforce sync
 - Reply routing and hot-lead alerts

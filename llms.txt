@@ -4,16 +4,16 @@
 
 ## How I help revenue leaders
 
-1. **Map the market** — TAM modeling and segmentation from real signals (funding, hiring, tech stack, leadership changes).
-2. **Test the hypothesis** — lists, messaging, and channels run as experiments, answered in weeks.
-3. **Unblock the team** — lists sales ops can't deliver, call prep, personalization, ABM accounts for marketing, CRM sync, routing.
+1. **Map the market** — TAM modeling and segmentation from real signals, tested in weeks.
+2. **Build the source of truth** — accounts and customers in one place, synced to every channel; rep acceleration (call prep, briefs, warm-intro maps).
+3. **Run what compounds** — outbound, paid, LinkedIn, ABM, and growth experiments that each sharpen the next.
 
-Cold email is the smallest part of it. Work shipped in SaaS, healthcare, hardware, mineral rights, and M&A.
+Cold email is table stakes; it should run in the background. Work shipped in SaaS, healthcare, hardware, mineral rights, and M&A.
 
 ## Newsletter — Push to Main
 
 - Hub: https://pushtomain.xyz/newsletter/
-- [Issue 01 — Cold email is the smallest part](https://pushtomain.xyz/newsletter/001.md): What revenue leaders actually want from a GTM engineer.
+- [Issue 01 — Cold email is table stakes](https://pushtomain.xyz/newsletter/001.md): Why a good GTM engineer compounds, and what the work is beyond cold email.
 
 ## Selected proof
 
@@ -41,7 +41,7 @@ Cold email is the smallest part of it. Work shipped in SaaS, healthcare, hardwar
 
 ## Services
 
-- [Full cycle menu](https://pushtomain.xyz/services.md): 63 top-of-funnel services à la carte across data/signal, phone, email, social, messaging, AI, systems, and team.
+- [Full cycle menu](https://pushtomain.xyz/services.md): 68 top-of-funnel services à la carte across data/signal, phone, email, social, messaging, AI, systems, and team.
 
 ## Contact
 
