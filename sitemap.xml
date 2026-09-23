@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://pushtomain.xyz/</loc></url>
+  <url><loc>https://pushtomain.xyz/newsletter/</loc></url>
+  <url><loc>https://pushtomain.xyz/newsletter/001/</loc></url>
+  <url><loc>https://pushtomain.xyz/services/</loc></url>
   <url><loc>https://pushtomain.xyz/numbers/</loc></url>
   <url><loc>https://pushtomain.xyz/work/cassette/</loc></url>
   <url><loc>https://pushtomain.xyz/work/clinical-signal-platform/</loc></url>
@@ -8,12 +11,12 @@
   <url><loc>https://pushtomain.xyz/work/crm-sync/</loc></url>
   <url><loc>https://pushtomain.xyz/work/data-companion-factory/</loc></url>
   <url><loc>https://pushtomain.xyz/work/email-from-zero/</loc></url>
-  <url><loc>https://pushtomain.xyz/work/integrators-exit/</loc></url>
   <url><loc>https://pushtomain.xyz/work/lamplighter/</loc></url>
   <url><loc>https://pushtomain.xyz/work/math-of-sales/</loc></url>
   <url><loc>https://pushtomain.xyz/work/merlin/</loc></url>
   <url><loc>https://pushtomain.xyz/work/punch-gtm/</loc></url>
   <url><loc>https://pushtomain.xyz/work/reply-slack-relay/</loc></url>
+  <url><loc>https://pushtomain.xyz/work/scalphunter/</loc></url>
   <url><loc>https://pushtomain.xyz/work/sec-form-d-pipeline/</loc></url>
   <url><loc>https://pushtomain.xyz/work/signal-index-engine/</loc></url>
   <url><loc>https://pushtomain.xyz/work/skill-library/</loc></url>

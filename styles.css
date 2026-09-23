@@ -78,8 +78,15 @@ a { color: inherit; text-decoration: none; }
   padding-top: clamp(1.5rem, 3vw, 2.4rem);
   font-weight: 500; font-size: 0.82rem;
   letter-spacing: 0.02em;
+  gap: 1rem;
 }
 .topbar .mark { font-family: "Apfel Grotezk Brukt", serif; letter-spacing: 0; font-size: 1rem; }
+.top-nav {
+  display: flex; align-items: center; gap: clamp(0.9rem, 2.5vw, 1.6rem);
+  flex-wrap: wrap; justify-content: flex-end;
+}
+.top-nav a { color: var(--ink-2); transition: color 0.2s ease; }
+.top-nav a:hover { color: var(--green); }
 .topbar .avail { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--ink-2); }
 .topbar .dot {
   width: 8px; height: 8px; border-radius: 50%; background: var(--green-bright);
@@ -93,11 +100,11 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Hero ── */
 .hero {
-  padding: clamp(3.5rem, 11vh, 8.5rem) 0 clamp(2.5rem, 7vh, 5rem);
+  padding: clamp(2.2rem, 7vh, 5.5rem) 0 clamp(2rem, 5vh, 3.5rem);
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: end;
+  align-items: center;
 }
 .kicker {
   font-weight: 500; font-size: 0.82rem; letter-spacing: 0.14em;
@@ -106,11 +113,26 @@ a { color: inherit; text-decoration: none; }
 }
 .display {
   font-weight: 700;
-  font-size: clamp(3.2rem, 13vw, 10.5rem);
+  font-size: clamp(2.8rem, 7.4vw, 6.4rem);
   line-height: 0.92;
   letter-spacing: -0.035em;
 }
-.display .line2 { color: var(--green); display: block; }
+.display > span { display: block; text-wrap: balance; }
+.display .line2 { color: var(--green); }
+.hero-support {
+  margin-top: clamp(1.2rem, 3vw, 1.8rem);
+  max-width: 38ch;
+  font-size: clamp(1.1rem, 1rem + 0.45vw, 1.35rem);
+  line-height: 1.45;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.hero-ctas {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1rem;
+  margin-top: clamp(1.5rem, 3vw, 2.2rem);
+  align-items: center;
+}
+.hero-ctas .visit { margin-top: 0; }
 .portrait {
   width: clamp(120px, 20vw, 232px);
   aspect-ratio: 4 / 5;
@@ -120,7 +142,7 @@ a { color: inherit; text-decoration: none; }
   align-self: end;
 }
 
-/* ── Intro ── */
+/* ── Intro (legacy pages) ── */
 .intro {
   max-width: 44ch;
   font-size: clamp(1.15rem, 1rem + 0.7vw, 1.55rem);
@@ -129,6 +151,141 @@ a { color: inherit; text-decoration: none; }
 }
 .intro p + p { margin-top: 1.1rem; }
 .intro .lede { font-weight: 500; }
+
+/* ── At a glance ── */
+.facts { padding: clamp(1.4rem, 3vw, 2rem) 0; }
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 2.2rem);
+}
+.facts dt {
+  font-weight: 500; font-size: 0.72rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+.facts dd { font-weight: 500; font-size: 0.95rem; line-height: 1.4; }
+@media (max-width: 900px) { .facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .facts-grid { grid-template-columns: 1fr; } }
+
+/* ── CEO help ── */
+.ceo-note {
+  margin-top: clamp(1.6rem, 4vw, 2.4rem);
+  max-width: 52ch;
+  color: var(--ink-2);
+  font-size: clamp(1.02rem, 0.97rem + 0.3vw, 1.15rem);
+}
+
+/* ── Newsletter band ── */
+.letter-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  gap: clamp(1.8rem, 5vw, 3.5rem);
+  align-items: end;
+}
+.letter-title {
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 0.85rem;
+}
+.letter-lede {
+  font-weight: 500;
+  font-size: clamp(1.15rem, 1rem + 0.55vw, 1.4rem);
+  line-height: 1.4;
+  max-width: 36ch;
+  margin-bottom: 0.9rem;
+}
+.letter-body {
+  color: var(--ink-2);
+  max-width: 42ch;
+  font-size: 0.98rem;
+}
+.letter-meta {
+  margin-top: 1.2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.letter-meta a { color: var(--green); }
+.letter-meta a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.letter-form {
+  display: flex; flex-direction: column; gap: 0.65rem;
+  padding: 1.25rem 0 0;
+  border-top: 1.5px solid var(--ink);
+}
+.letter-form input[type="email"] {
+  font: inherit; font-size: 1rem;
+  color: var(--ink); background: transparent;
+  border: none; border-bottom: 1.5px solid var(--rule);
+  padding: 0.7rem 0; outline: none; width: 100%;
+  transition: border-color 0.2s ease;
+}
+.letter-form input[type="email"]::placeholder { color: var(--muted); }
+.letter-form input[type="email"]:focus { border-color: var(--green); }
+.letter-form button {
+  font: inherit; font-weight: 500; font-size: 0.9rem;
+  background: var(--green); color: var(--paper);
+  border: none; cursor: pointer;
+  padding: 0.7rem 1.15rem; border-radius: 999px;
+  align-self: flex-start;
+  transition: background 0.25s ease, transform 0.25s cubic-bezier(0.2,0.7,0.2,1);
+}
+.letter-form button:hover { background: var(--green-bright); transform: translateY(-2px); }
+.letter-form-row {
+  display: flex; flex-wrap: wrap; gap: 0.75rem;
+  align-items: stretch;
+}
+.letter-form-row input[type="email"] { flex: 1 1 200px; }
+.letter-form-wide { border-top: none; padding-top: 0; max-width: 36rem; }
+.form-note { color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+.letter-standalone { border-top: 1px solid var(--rule); }
+
+/* ── Thesis ── */
+.thesis-line {
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.05rem + 1vw, 1.85rem);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  max-width: 46ch;
+}
+
+/* ── Issue essay ── */
+.issue { padding: clamp(1rem, 3vw, 2rem) 0 clamp(2rem, 5vw, 3rem); }
+.issue-head { border-top: none; padding-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+.issue-body {
+  max-width: 62ch;
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(1.05rem, 1rem + 0.35vw, 1.2rem);
+  line-height: 1.65;
+}
+.issue-body p + p { margin-top: 1.15rem; }
+.issue-body h2 {
+  font-weight: 700; font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.7rem);
+  letter-spacing: -0.02em; line-height: 1.2;
+  margin: 2.2rem 0 0.9rem;
+}
+.issue-body .results-list { margin: 1.1rem 0; }
+.issue-body a {
+  color: var(--green); font-weight: 500;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.issue-signoff {
+  margin-top: 1.8rem !important;
+  font-weight: 500; color: var(--ink-2);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+@media (max-width: 720px) {
+  .letter-grid { grid-template-columns: 1fr; }
+  .top-nav { font-size: 0.78rem; gap: 0.75rem; }
+}
 
 /* ── Section scaffolding ── */
 section { border-top: 1px solid var(--rule); padding: clamp(2.2rem, 5vw, 3.4rem) 0; }
@@ -225,9 +382,24 @@ footer { border-top: 1px solid var(--rule); padding: clamp(2.5rem,6vw,4rem) 0 cl
 /* ── Responsive ── */
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; align-items: start; }
-  .portrait { order: -1; width: clamp(110px, 34vw, 150px); }
+  .portrait { order: -1; width: clamp(88px, 28vw, 120px); }
   .row { grid-template-columns: 1.8rem 1fr; }
   .row .meta { grid-column: 2; margin-top: 0.5rem; }
+  .display {
+    font-size: clamp(2.4rem, 12vw, 3.6rem);
+    max-width: 100%;
+  }
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .top-nav a[href="#how"],
+  .top-nav a[href="/services/"] { display: none; }
+  .hero-ctas .visit { width: 100%; justify-content: center; }
+  .letter-form button { width: 100%; }
+  .letter-form-row { flex-direction: column; }
+  .letter-form-row button { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -269,6 +441,11 @@ footer { border-top: 1px solid var(--rule); padding: clamp(2.5rem,6vw,4rem) 0 cl
 .visit:hover { background: var(--green-bright); transform: translateY(-2px); }
 .visit .arrow { transition: transform 0.25s cubic-bezier(0.2,0.7,0.2,1); }
 .visit:hover .arrow { transform: translate(2px, -2px); }
+.visit.visit-ghost {
+  background: transparent; color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+.visit.visit-ghost:hover { background: var(--ink); color: var(--paper); }
 
 .stat-band {
   border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);

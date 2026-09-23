@@ -1,38 +1,47 @@
 # Joel Martinez — push to main
 
-> Go-to-market engineer in Seattle. I build the systems that run go-to-market: signal engines, propensity models, campaign infrastructure, and the governance rails that keep it producing without headcount. This file is the agent-friendly index — every case study below has a markdown twin (same content as the HTML, structured for extraction).
+> GTM engineer in Seattle. I help CEOs and revenue leaders (CROs, VPs of Sales and Marketing) model the market, segment it, and test their hypotheses in days, not quarters — then build the data and AI systems that keep it running. Ten years carrying a bag; builds with AI. Available for project, fractional, or embedded work.
 
-The work is organized as three rings:
-1. **The Signal** — propensity models and signal engines that find who's worth talking to, the moment they're worth it.
-2. **The Send** — campaigns and channels that turn signal into real conversations.
-3. **The Rails** — the governance and plumbing that keeps it all running without me.
+## How I help revenue leaders
 
-If you're evaluating what these systems could patch in your own GTM stack: each page states the problem, what was built, the verified numbers, and the caveats. Client work is anonymized; every metric is machine-verified from run logs, not projected.
+1. **Map the market** — TAM modeling and segmentation from real signals, tested in weeks.
+2. **Build the source of truth** — accounts and customers in one place, synced to every channel; rep acceleration (call prep, briefs, warm-intro maps).
+3. **Run what compounds** — outbound, paid, LinkedIn, ABM, and growth experiments that each sharpen the next.
 
-## The Circus — personal tools, live
+Cold email is table stakes; it should run in the background. Work shipped in SaaS, healthcare, hardware, mineral rights, and M&A.
 
-- [Merlin](https://pushtomain.xyz/work/merlin.md): Signal engine on Cloudflare — SEC Form D discovery, AI propensity scoring, durable Workflows, D1, live dashboard
-- [Lamplighter](https://pushtomain.xyz/work/lamplighter.md): Fingerprints any company's GTM stack live from the edge, with an AI "field read"
-- [Connie](https://pushtomain.xyz/work/connie.md): Open-source Go engine scanning Ashby/Greenhouse/Lever job boards with a SQLite Registry that remembers every posting — hiring signals as a feed (github.com/saiwrd/connie)
-- [The Math of Sales](https://pushtomain.xyz/work/math-of-sales.md): Interactive outbound calculator — revenue goal worked backward to daily dials
-- [Cassette](https://pushtomain.xyz/work/cassette.md): Local-first meeting recorder/transcriber (Tauri + Whisper), System 7 aesthetic — in progress
-- [Punch GTM](https://pushtomain.xyz/work/punch-gtm.md): AI-powered outbound agency — messaging mined from clients' real call recordings
+## Newsletter — Push to Main
 
-## The Workshop — production systems built for clients (anonymized)
+- Hub: https://pushtomain.xyz/newsletter/
+- [Issue 01 — Cold email is table stakes](https://pushtomain.xyz/newsletter/001.md): Why a good GTM engineer compounds, and what the work is beyond cold email.
 
-- [Email From Zero](https://pushtomain.xyz/work/email-from-zero.md): Net-new cold-email channel for a phone-only company — 6.1% reply, real opportunities created
-- [Scalphunter](https://pushtomain.xyz/work/scalphunter.md): 1,336-company AI-scored universe for an M&A-arbitrage thesis — seven-dimension propensity model
-- [Clinical Signal Platform](https://pushtomain.xyz/work/clinical-signal-platform.md): 8-stage healthcare data platform with governance/audit layer — 4,948 practices, zero exclusion misses
-- [SEC Form D Pipeline](https://pushtomain.xyz/work/sec-form-d-pipeline.md): 14,749 newly-funded companies filtered from ~99K SEC filings in ~24 seconds
-- [Signal-Index Engine](https://pushtomain.xyz/work/signal-index-engine.md): Multi-tenant propensity engine + crash-safe, resume-from-death enrichment pipeline
-- [Reply → Slack Relay](https://pushtomain.xyz/work/reply-slack-relay.md): One multi-tenant Cloudflare Worker turning campaign replies into rich Slack alerts — ~2 min per-client onboarding
-- [CRM Sync Automations](https://pushtomain.xyz/work/crm-sync.md): Idempotent, state-tracked cron sync of outbound activity into HubSpot — 2,214 leads, 10 campaigns, zero duplicates
-- [GTM Skill Library](https://pushtomain.xyz/work/skill-library.md): Parameterized, documented skills bringing governance to recurring GTM operations — 80% verified enrichment hit rate
-- [Data-Companion Factory](https://pushtomain.xyz/work/data-companion-factory.md): Self-serve per-client data projects — 4 instances, no engineer in the loop after setup
+## Selected proof
 
-## Services — what I can be hired to do
+- [Email From Zero](https://pushtomain.xyz/work/email-from-zero.md): Net-new cold-email for a phone-only mineral-rights company
+- [Clinical Signal Platform](https://pushtomain.xyz/work/clinical-signal-platform.md): Healthcare data platform + federal exclusion screening
+- [Scalphunter](https://pushtomain.xyz/work/scalphunter.md): M&A-arbitrage propensity universe — 1,336 companies
+- [Merlin](https://pushtomain.xyz/work/merlin.md): Funding-round signal engine on Cloudflare
+- [SEC Form D Pipeline](https://pushtomain.xyz/work/sec-form-d-pipeline.md): 14,749 newly-funded companies from ~99K filings
+- [Punch GTM](https://pushtomain.xyz/work/punch-gtm.md): AI-powered outbound agency
 
-- [Full cycle menu](https://pushtomain.xyz/services.md): 59 top-of-funnel services à la carte across data/signal, phone, email, social, messaging, AI, systems, and team. Engagements pull three or four items, not the whole list.
+## Tools (The Circus)
+
+- [Lamplighter](https://pushtomain.xyz/work/lamplighter.md): Live GTM-stack fingerprinting
+- [Connie](https://pushtomain.xyz/work/connie.md): Open-source hiring-signal engine (github.com/saiwrd/connie)
+- [The Math of Sales](https://pushtomain.xyz/work/math-of-sales.md): Outbound unit-economics calculator
+- [Cassette](https://pushtomain.xyz/work/cassette.md): Local meeting recorder (in progress)
+
+## More workshop systems
+
+- [Signal-Index Engine](https://pushtomain.xyz/work/signal-index-engine.md)
+- [Reply → Slack Relay](https://pushtomain.xyz/work/reply-slack-relay.md)
+- [CRM Sync Automations](https://pushtomain.xyz/work/crm-sync.md)
+- [GTM Skill Library](https://pushtomain.xyz/work/skill-library.md)
+- [Data-Companion Factory](https://pushtomain.xyz/work/data-companion-factory.md)
+
+## Services
+
+- [Full cycle menu](https://pushtomain.xyz/services.md): 68 top-of-funnel services à la carte across data/signal, phone, email, social, messaging, AI, systems, and team.
 
 ## Contact
 
@@ -40,3 +49,4 @@ If you're evaluating what these systems could patch in your own GTM stack: each 
 - LinkedIn: https://www.linkedin.com/in/joelrmartinez/
 - GitHub: https://github.com/saiwrd
 - X: https://x.com/itsjoelmartinez
+- Newsletter: https://pushtomain.xyz/newsletter/

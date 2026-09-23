@@ -7,7 +7,9 @@ Live page: https://pushtomain.xyz/services/
 ## Data and signal
 
 - ICP definition
-- TAM sizing
+- TAM modeling and sizing
+- Segmentation you can test, not just present
+- ABM account selection for marketing
 - List building at volume
 - Contact enrichment waterfalls
 - Email and phone verification
@@ -57,6 +59,8 @@ Live page: https://pushtomain.xyz/services/
 - Value proposition workshop
 - Cold call scripts and talk tracks
 - Pain-based segmentation
+- Hypothesis tests on segment, message, and channel
+- Call prep and research briefs for reps
 - Pocket stories per industry and persona
 - Objection rebuttals
 
@@ -67,9 +71,14 @@ Live page: https://pushtomain.xyz/services/
 - Custom pipelines built with AI
 - AI-written copy that doesn't read like it
 - Automating the work of a whole team
+- SEO built with AI and APIs
+- Referral and product growth experiments
 
 ## Systems
 
+- One source of truth for accounts, synced to every channel
+- Slack answers from customer data for reps
+- Warm-intro maps
 - CRM process design
 - HubSpot and Salesforce sync
 - Reply routing and hot-lead alerts
