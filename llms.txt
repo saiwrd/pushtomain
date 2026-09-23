@@ -2,6 +2,10 @@
 
 > GTM engineer in Seattle. I help CEOs and revenue leaders (CROs, VPs of Sales and Marketing) model the market, segment it, and test their hypotheses in days, not quarters — then build the data and AI systems that keep it running. Ten years carrying a bag; builds with AI. Available for project, fractional, or embedded work.
 
+## About
+
+- [About Joel Martinez](https://pushtomain.xyz/about.md): value prop, services, differentiators, who it is for, how engagements work, key facts, and FAQ.
+
 ## How I help revenue leaders
 
 1. **Map the market** — TAM modeling and segmentation from real signals, tested in weeks.
