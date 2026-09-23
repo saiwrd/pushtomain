@@ -100,7 +100,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Hero ── */
 .hero {
-  padding: clamp(3.5rem, 11vh, 8.5rem) 0 clamp(2.5rem, 7vh, 5rem);
+  padding: clamp(2.2rem, 7vh, 5.5rem) 0 clamp(2rem, 5vh, 3.5rem);
   display: grid;
   grid-template-columns: 1fr auto;
   gap: clamp(1.5rem, 4vw, 4rem);
@@ -113,7 +113,7 @@ a { color: inherit; text-decoration: none; }
 }
 .display {
   font-weight: 700;
-  font-size: clamp(3.2rem, 13vw, 10.5rem);
+  font-size: clamp(2.8rem, 9vw, 7.2rem);
   line-height: 0.92;
   letter-spacing: -0.035em;
 }
@@ -359,11 +359,11 @@ footer { border-top: 1px solid var(--rule); padding: clamp(2.5rem,6vw,4rem) 0 cl
 /* ── Responsive ── */
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; align-items: start; }
-  .portrait { order: -1; width: clamp(110px, 34vw, 150px); }
+  .portrait { order: -1; width: clamp(88px, 28vw, 120px); }
   .row { grid-template-columns: 1.8rem 1fr; }
   .row .meta { grid-column: 2; margin-top: 0.5rem; }
   .display {
-    font-size: clamp(2.6rem, 14vw, 4.2rem);
+    font-size: clamp(2.4rem, 12vw, 3.6rem);
     max-width: 100%;
   }
   .topbar {
