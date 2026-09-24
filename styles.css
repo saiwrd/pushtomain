@@ -165,6 +165,8 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 0.35rem;
 }
 .facts dd { font-weight: 500; font-size: 0.95rem; line-height: 1.4; }
+.facts dd a { color: var(--green); white-space: nowrap; }
+.facts dd a:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 900px) { .facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .facts-grid { grid-template-columns: 1fr; } }
 
@@ -248,6 +250,61 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.35;
   letter-spacing: -0.02em;
   max-width: 46ch;
+}
+
+/* ── About ── */
+.about-hero {
+  border-top: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(180px, 26vw, 300px);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: end;
+  padding: clamp(2.4rem, 7vh, 5rem) 0 clamp(2rem, 5vw, 3rem);
+}
+.about-hero .hero-ctas { margin-top: 1.8rem; }
+.about-photo {
+  width: 100%; height: auto;
+  aspect-ratio: 960 / 896; object-fit: cover;
+  filter: grayscale(1) contrast(1.03);
+  border-radius: 3px;
+}
+.about section { max-width: 72ch; }
+.about h2 {
+  font-weight: 700; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
+  letter-spacing: -0.025em; line-height: 1.1;
+  margin-bottom: 1.4rem;
+}
+.about h3 {
+  font-weight: 700; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
+  letter-spacing: -0.01em; margin-bottom: 0.35rem;
+}
+.about p { color: var(--ink-2); }
+.about section > p + p { margin-top: 1rem; }
+.about a:not(.visit) { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3vw, 2.2rem) clamp(1.4rem, 4vw, 3rem);
+}
+.about .results-list li { color: var(--ink-2); }
+.about .results-list strong { color: var(--ink); }
+.key-facts { border-top: 1.5px solid var(--ink); }
+.key-facts > div {
+  display: grid; grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--rule);
+}
+.key-facts dt {
+  font-weight: 500; font-size: 0.74rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted); padding-top: 0.2em;
+}
+.key-facts dd { font-weight: 500; font-size: 0.98rem; }
+.faq h3 { margin-top: 1.6rem; }
+.faq h2 + h3 { margin-top: 0; }
+@media (max-width: 720px) {
+  .about-hero { grid-template-columns: minmax(0, 1fr); }
+  .about-photo { order: -1; max-width: 200px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .key-facts > div { grid-template-columns: 1fr; gap: 0.2rem; }
 }
 
 /* ── Issue essay ── */
