@@ -378,7 +378,7 @@ section { border-top: 1px solid var(--rule); padding: clamp(2.2rem, 5vw, 3.4rem)
 .rows { display: flex; flex-direction: column; }
 .row {
   display: grid;
-  grid-template-columns: 2.5rem minmax(0,1fr) auto;
+  grid-template-columns: minmax(0,1fr) auto;
   gap: clamp(0.8rem, 3vw, 2.4rem);
   align-items: baseline;
   padding: 1.15rem 0;
@@ -440,8 +440,8 @@ footer { border-top: 1px solid var(--rule); padding: clamp(2.5rem,6vw,4rem) 0 cl
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; align-items: start; }
   .portrait { order: -1; width: clamp(88px, 28vw, 120px); }
-  .row { grid-template-columns: 1.8rem 1fr; }
-  .row .meta { grid-column: 2; margin-top: 0.5rem; }
+  .row { grid-template-columns: 1fr; }
+  .row .meta { grid-column: 1; margin-top: 0.5rem; }
   .display {
     font-size: clamp(2.4rem, 12vw, 3.6rem);
     max-width: 100%;
