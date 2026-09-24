@@ -3,5 +3,5 @@ Allow: /
 
 Sitemap: https://pushtomain.xyz/sitemap.xml
 
-# Agents: start at https://pushtomain.xyz/llms.txt — every case study has a
+# Agents: start at https://pushtomain.xyz/llms.txt. Every case study has a
 # markdown twin at /work/<slug>.md with the same content as the HTML page.
