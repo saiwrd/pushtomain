@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Merlin — Joel Martinez</title>
+  <title>Merlin · Joel Martinez</title>
   <meta name="description" content="A signal-based GTM engine built entirely on Cloudflare primitives: watches for buying signals, enriches, and scores fit with an AI agent.">
-  <meta property="og:title" content="Merlin — a GTM signal engine on Cloudflare">
-  <meta property="og:description" content="Cron-triggered discovery, a durable pipeline, an LLM scoring agent, and a live dashboard — no external infrastructure.">
+  <meta property="og:title" content="Merlin · a GTM signal engine on Cloudflare">
+  <meta property="og:description" content="Cron-triggered discovery, a durable pipeline, an LLM scoring agent, and a live dashboard. No external infrastructure.">
   <meta property="og:type" content="article">
   <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -15,15 +15,20 @@
 <body>
   <div class="wrap">
 
-    <header class="topbar reveal d1">
-      <a class="back" href="/"><span class="ar">←</span> Joel Martinez</a>
-      <span class="avail"><span class="dot"></span>Seattle</span>
+    <header class="topbar">
+      <a class="mark" href="/">push to main</a>
+      <nav class="top-nav">
+        <a href="/#how">How I help</a>
+        <a href="/about/">About</a>
+        <a href="/newsletter/">Newsletter</a>
+        <a href="/services/">Services</a>
+      </nav>
     </header>
 
     <section class="detail-hero">
       <p class="kicker reveal d2">The Circus · 01</p>
       <h1 class="detail-title reveal d3">Merlin</h1>
-      <p class="detail-lede reveal d4">A signal engine that finds companies the moment they raise capital, scores each with an AI propensity model, and surfaces the ranked results live — running entirely on Cloudflare.</p>
+      <p class="detail-lede reveal d4">A signal engine that finds companies the moment they raise capital, scores each with an AI propensity model, and surfaces the ranked results live. Running entirely on Cloudflare.</p>
       <div class="tags reveal d5">
         <span class="tag soon">Cloudflare</span>
         <span class="tag soon">Workflows</span>
@@ -34,7 +39,7 @@
     </section>
 
     <div class="stat-band">
-      <div class="stat"><div class="big">100%</div><div class="cap">Cloudflare-native — no external infrastructure</div></div>
+      <div class="stat"><div class="big">100%</div><div class="cap">Cloudflare-native. No external infrastructure</div></div>
       <div class="stat"><div class="big">0</div><div class="cap">external API keys required to run it</div></div>
       <div class="stat"><div class="big">0–100</div><div class="cap">AI-scored ICP fit for every company found</div></div>
     </div>
@@ -42,17 +47,17 @@
     <div class="detail-body">
       <div class="block">
         <h2>The idea</h2>
-        <p>Modern go-to-market is a pipeline: watch for a buying signal, enrich the company behind it, decide whether it's worth pursuing, and put the ranked answer in front of someone. Merlin is that whole loop built as a working demonstration — proof that an entire GTM signal engine can run on an edge platform with no servers and no external services to babysit.</p>
+        <p>Modern go-to-market is a pipeline: watch for a buying signal, enrich the company behind it, decide whether it's worth pursuing, and put the ranked answer in front of someone. Merlin is that whole loop built as a working demonstration. Proof that an entire GTM signal engine can run on an edge platform with no servers and no external services to babysit.</p>
         <p>The signal it watches: companies that just raised capital, pulled from public SEC EDGAR Form D filings. The "why now" is baked into every record.</p>
       </div>
       <div class="block">
         <h2>What I built</h2>
         <p>A cron trigger kicks off weekly discovery (or you hit "Run now" on the dashboard). A durable, auto-retrying Workflow orchestrates the steps; Workers fan out to enrich each company; Workers AI acts as a propensity model, scoring each company's fit 0–100 against a configurable ICP and writing out its reasoning. Results land in a D1 database and render on a public dashboard served from the same Worker.</p>
-        <p>The ICP is a swappable definition — point the same engine at a different buyer and it re-scores against the new target. The first instance scores companies against a developer-platform / edge-infrastructure ICP.</p>
+        <p>The ICP is a swappable definition. Point the same engine at a different buyer and it re-scores against the new target. The first instance scores companies against a developer-platform / edge-infrastructure ICP.</p>
       </div>
       <div class="block">
         <h2>Why it's interesting</h2>
-        <p>Every piece — scheduling, durable orchestration, the LLM agent, the database, the dashboard — is a Cloudflare primitive. It's the clearest way I've found to show that the infrastructure a GTM team used to need a stack of vendors for now fits inside one deployment.</p>
+        <p>Every piece. Scheduling, durable orchestration, the LLM agent, the database, the dashboard. Is a Cloudflare primitive. It's the clearest way I've found to show that the infrastructure a GTM team used to need a stack of vendors for now fits inside one deployment.</p>
       </div>
     </div>
 

@@ -1,16 +1,16 @@
 # Scalphunter
 
-*The Workshop · 08 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 08. Joel Martinez, pushtomain.xyz*
 
-> A full custom pipeline built around an M&A / valuation-arbitrage thesis no one else was targeting — sourcing, AI qualification, a seven-dimension propensity model, and enrichment, all the way into the CRM.
+> A full custom pipeline built around an M&A / valuation-arbitrage thesis no one else was targeting. Sourcing, AI qualification, a seven-dimension propensity model, and enrichment, all the way into the CRM.
 
 **Stack:** Python · LLM scoring · HubSpot
 
 ## Key numbers
 
-- **1,336** — companies sourced and AI-scored into the account universe
-- **7** — scoring dimensions per company, each rated 0–100
-- **778** — leadership contacts extracted and enriched
+- **1,336**. Companies sourced and AI-scored into the account universe
+- **7**. Scoring dimensions per company, each rated 0–100
+- **778**. Leadership contacts extracted and enriched
 
 ## The thesis
 
@@ -24,8 +24,8 @@ An end-to-end pipeline: LinkedIn sourcing → a fast AI "gut-check" filter (a sm
 
 - 1,336-company scored account universe and 778 leadership contacts, assembled and pushed to the CRM.
 - Outbound campaigns launched against the scored list.
-- One sourcing cohort came in far below expectation — I root-caused it (LinkedIn keyword search misses ERP-channel partner directories) and documented the fix rather than papering over it.
-I keep the honest miss in the story on purpose — the diagnosis is as much a part of the work as the build.
+- One sourcing cohort came in far below expectation. I root-caused it (LinkedIn keyword search misses ERP-channel partner directories) and documented the fix rather than papering over it.
+I keep the honest miss in the story on purpose. The diagnosis is as much a part of the work as the build.
 
 ---
 HTML version: https://pushtomain.xyz/work/scalphunter/

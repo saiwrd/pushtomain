@@ -1,4 +1,4 @@
-# Full cycle menu — Services
+# Full cycle menu. Services
 
 > Everything I can do about top of funnel, à la carte. Nobody needs all of it and nobody buys all of it: we talk about the number you're trying to hit, pull three or four items off this list, and price those. The menu is long so the engagement can be short.
 
@@ -67,7 +67,7 @@ Live page: https://pushtomain.xyz/services/
 ## AI
 
 - AI strategy for go-to-market
-- Agent and tool evaluation — what's real, what isn't
+- Agent and tool evaluation. What's real, what isn't
 - Custom pipelines built with AI
 - AI-written copy that doesn't read like it
 - Automating the work of a whole team
@@ -94,11 +94,11 @@ Live page: https://pushtomain.xyz/services/
 - Live call coaching and reviews
 - Team workshops and drills
 - Documented playbooks, so it runs without me
-- On the phone myself — one or two clients at a time
+- On the phone myself. One or two clients at a time
 
 ## How it's packaged
 
-No prix fixe. Pick three or four and the program gets built around them — the menu is long so the engagement can be short.
+No prix fixe. Pick three or four and the program gets built around them. The menu is long so the engagement can be short.
 
 ## Contact
 

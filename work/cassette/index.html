@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cassette — Joel Martinez</title>
+  <title>Cassette · Joel Martinez</title>
   <meta name="description" content="A local-first menu-bar app for recording and transcribing meetings. Tauri + Whisper, styled like a 1991 Macintosh.">
-  <meta property="og:title" content="Cassette — a retro meeting recorder">
+  <meta property="og:title" content="Cassette · a retro meeting recorder">
   <meta property="og:description" content="Record and transcribe meetings locally. Tauri + Whisper, designed to look like it belongs on a 1991 Macintosh.">
   <meta property="og:type" content="article">
   <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
@@ -15,15 +15,20 @@
 <body>
   <div class="wrap">
 
-    <header class="topbar reveal d1">
-      <a class="back" href="/"><span class="ar">←</span> Joel Martinez</a>
-      <span class="avail"><span class="dot"></span>Seattle</span>
+    <header class="topbar">
+      <a class="mark" href="/">push to main</a>
+      <nav class="top-nav">
+        <a href="/#how">How I help</a>
+        <a href="/about/">About</a>
+        <a href="/newsletter/">Newsletter</a>
+        <a href="/services/">Services</a>
+      </nav>
     </header>
 
     <section class="detail-hero">
       <p class="kicker reveal d2">The Circus · 05</p>
       <h1 class="detail-title reveal d3">Cassette</h1>
-      <p class="detail-lede reveal d4">A local-first desktop app for recording and transcribing meetings — designed to look like it belongs on a 1991 Macintosh.</p>
+      <p class="detail-lede reveal d4">A local-first desktop app for recording and transcribing meetings. Designed to look like it belongs on a 1991 Macintosh.</p>
       <div class="tags reveal d5">
         <span class="tag soon">Tauri v2</span>
         <span class="tag soon">Whisper</span>
@@ -35,12 +40,12 @@
     <div class="detail-body">
       <div class="block">
         <h2>The idea</h2>
-        <p>Meeting recorders are cloud-first, heavy, and generic — your audio leaves your machine and lands on someone else's server. I wanted the opposite: a small, native, local-first recorder that transcribes on-device, and that's a genuine pleasure to look at.</p>
+        <p>Meeting recorders are cloud-first, heavy, and generic. Your audio leaves your machine and lands on someone else's server. I wanted the opposite: a small, native, local-first recorder that transcribes on-device, and that's a genuine pleasure to look at.</p>
       </div>
       <div class="block">
         <h2>What I'm building</h2>
-        <p>A menu-bar app that records meetings and transcribes them locally with Whisper. It started life in Electron and has since migrated to Tauri v2 — dramatically lighter, system-native, and fast to launch. The interface is a deliberate homage to System 7: chunky chrome, pixel type, the works.</p>
-        <p class="caveat">Status: in progress. This one's a work-in-progress, and I'm building it because I want to use it — not to ship a product.</p>
+        <p>A menu-bar app that records meetings and transcribes them locally with Whisper. It started life in Electron and has since migrated to Tauri v2. Dramatically lighter, system-native, and fast to launch. The interface is a deliberate homage to System 7: chunky chrome, pixel type, the works.</p>
+        <p class="caveat">Status: in progress. This one's a work-in-progress, and I'm building it because I want to use it. Not to ship a product.</p>
       </div>
     </div>
 

@@ -1,4 +1,4 @@
-# About Joel Martinez — GTM Engineer
+# About Joel Martinez. GTM Engineer
 
 > Joel Martinez is a GTM engineer who helps CEOs and revenue leaders model their market, test their hypotheses, and build the data and AI systems that make pipeline compound.
 

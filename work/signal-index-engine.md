@@ -1,6 +1,6 @@
 # Signal-Index Engine
 
-*The Workshop · 11 — Joel Martinez, pushtomain.xyz*
+*The Workshop · 11. Joel Martinez, pushtomain.xyz*
 
 > A propensity engine that scores thousands of brands on composite health signals, paired with a crash-safe enrichment pipeline that picks up exactly where it died.
 
@@ -8,13 +8,13 @@
 
 ## Key numbers
 
-- **3,400+** — decision-maker contacts verified across runs
-- **~2,800** — brands per sourced universe (industry × headcount × geo)
-- **0** — records lost to a crash — the pipeline resumes from where it stopped
+- **3,400+**. Decision-maker contacts verified across runs
+- **~2,800**. Brands per sourced universe (industry × headcount × geo)
+- **0**. Records lost to a crash. The pipeline resumes from where it stopped
 
 ## The problem
 
-A client needed to score thousands of consumer brands on composite "health" signals — repeatably, in a way that could be re-pointed at future clients — and to source and verify decision-makers at scale without losing hours of work every time a long enrichment run crashed.
+A client needed to score thousands of consumer brands on composite "health" signals. Repeatably, in a way that could be re-pointed at future clients. And to source and verify decision-makers at scale without losing hours of work every time a long enrichment run crashed.
 
 ## What I built
 

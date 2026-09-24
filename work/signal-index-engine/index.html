@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signal-Index Engine — Joel Martinez</title>
+  <title>Signal-Index Engine · Joel Martinez</title>
   <meta name="description" content="A multi-tenant scoring engine that rates thousands of brands on composite signals, plus a crash-safe enrichment pipeline that resumes from where it died.">
   <meta property="og:title" content="Signal-Index Engine">
   <meta property="og:description" content="Systems architecture: a reusable scoring orchestrator and a resume-from-crash enrichment pipeline.">
@@ -15,9 +15,14 @@
 <body>
   <div class="wrap">
 
-    <header class="topbar reveal d1">
-      <a class="back" href="/"><span class="ar">←</span> Joel Martinez</a>
-      <span class="avail"><span class="dot"></span>Seattle</span>
+    <header class="topbar">
+      <a class="mark" href="/">push to main</a>
+      <nav class="top-nav">
+        <a href="/#how">How I help</a>
+        <a href="/about/">About</a>
+        <a href="/newsletter/">Newsletter</a>
+        <a href="/services/">Services</a>
+      </nav>
     </header>
 
     <section class="detail-hero">
@@ -34,13 +39,13 @@
     <div class="stat-band">
       <div class="stat"><div class="big">3,400+</div><div class="cap">decision-maker contacts verified across runs</div></div>
       <div class="stat"><div class="big">~2,800</div><div class="cap">brands per sourced universe (industry × headcount × geo)</div></div>
-      <div class="stat"><div class="big">0</div><div class="cap">records lost to a crash — the pipeline resumes from where it stopped</div></div>
+      <div class="stat"><div class="big">0</div><div class="cap">records lost to a crash. The pipeline resumes from where it stopped</div></div>
     </div>
 
     <div class="detail-body">
       <div class="block">
         <h2>The problem</h2>
-        <p>A client needed to score thousands of consumer brands on composite "health" signals — repeatably, in a way that could be re-pointed at future clients — and to source and verify decision-makers at scale without losing hours of work every time a long enrichment run crashed.</p>
+        <p>A client needed to score thousands of consumer brands on composite "health" signals. Repeatably, in a way that could be re-pointed at future clients. And to source and verify decision-makers at scale without losing hours of work every time a long enrichment run crashed.</p>
       </div>
       <div class="block">
         <h2>What I built</h2>

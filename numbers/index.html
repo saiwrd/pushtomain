@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Math of Sales — Joel Martinez</title>
+  <title>The Math of Sales · Joel Martinez</title>
   <meta name="description" content="An interactive calculator for outbound: exactly what it takes to hit a revenue goal by cold calling." />
   <style>
     @font-face { font-family: "Apfel Grotezk"; src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
@@ -17,7 +17,9 @@
     body { background: var(--paper); color: var(--ink); font-family: "Apfel Grotezk", system-ui, sans-serif;
       line-height: 1.55; -webkit-font-smoothing: antialiased; padding: clamp(1.4rem, 5vw, 4rem); }
     .wrap { max-width: 620px; margin: 0 auto; }
-    .back { font-size: 0.85rem; color: var(--ink-2); font-weight: 500; display: inline-block; margin-bottom: 2.2rem; }
+    .topbar { display: flex; justify-content: space-between; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2.2rem; font-weight: 500; font-size: 0.85rem; }
+    .mark, .top-nav a { color: var(--ink-2); text-decoration: none; }
+    .top-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
     .back:hover { color: var(--green); }
     a { color: inherit; text-decoration: none; }
     .kicker { font-weight: 500; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
@@ -59,10 +61,18 @@
 </head>
 <body>
   <div class="wrap">
-    <a class="back" href="/">← push to main</a>
+    <header class="topbar">
+      <a class="mark" href="/">push to main</a>
+      <nav class="top-nav">
+        <a href="/#how">How I help</a>
+        <a href="/about/">About</a>
+        <a href="/newsletter/">Newsletter</a>
+        <a href="/services/">Services</a>
+      </nav>
+    </header>
     <p class="kicker">The Math of Sales</p>
     <h1>Calculate your <em>outbound math.</em></h1>
-    <p class="sub">Enter your goal and see what it actually takes to hit it — by cold calling, where the numbers are controlled enough to trust.</p>
+    <p class="sub">Enter your goal and see what it actually takes to hit it. By cold calling, where the numbers are controlled enough to trust.</p>
 
     <div class="card">
       <h2>📞 Cold Calling Calculator</h2>
@@ -110,7 +120,7 @@
       </div>
     </div>
 
-    <p class="note">These calculations show the mathematical relationship between activity and results. Real outcomes vary with list quality, messaging, and execution — but on the phone the environment is controlled enough that the math holds up. It shows the levers you can pull to hit your goal.</p>
+    <p class="note">These calculations show the mathematical relationship between activity and results. Real outcomes vary with list quality, messaging, and execution. But on the phone the environment is controlled enough that the math holds up. It shows the levers you can pull to hit your goal.</p>
   </div>
 
   <script>

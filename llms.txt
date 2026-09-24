@@ -1,6 +1,6 @@
-# Joel Martinez — push to main
+# Joel Martinez. Push to main
 
-> GTM engineer in Seattle. I help CEOs and revenue leaders (CROs, VPs of Sales and Marketing) model the market, segment it, and test their hypotheses in days, not quarters — then build the data and AI systems that keep it running. Ten years carrying a bag; builds with AI. Available for project, fractional, or embedded work.
+> GTM engineer in Seattle. I help CEOs and revenue leaders (CROs, VPs of Sales and Marketing) model the market, segment it, and test their hypotheses in days, not quarters. Then build the data and AI systems that keep it running. Ten years carrying a bag; builds with AI. Available for project, fractional, or embedded work.
 
 ## About
 
@@ -8,22 +8,22 @@
 
 ## How I help revenue leaders
 
-1. **Map the market** — TAM modeling and segmentation from real signals, tested in weeks.
-2. **Build the source of truth** — accounts and customers in one place, synced to every channel; rep acceleration (call prep, briefs, warm-intro maps).
-3. **Run what compounds** — outbound, paid, LinkedIn, ABM, and growth experiments that each sharpen the next.
+1. **Map the market**. TAM modeling and segmentation from real signals, tested in weeks.
+2. **Build the source of truth**. Accounts and customers in one place, synced to every channel; rep acceleration (call prep, briefs, warm-intro maps).
+3. **Run what compounds**. Outbound, paid, LinkedIn, ABM, and growth experiments that each sharpen the next.
 
 Cold email is table stakes; it should run in the background. Work shipped in SaaS, healthcare, hardware, mineral rights, and M&A.
 
-## Newsletter — Push to Main
+## Newsletter. Push to Main
 
 - Hub: https://pushtomain.xyz/newsletter/
-- [Issue 01 — Cold email is table stakes](https://pushtomain.xyz/newsletter/001.md): Why a good GTM engineer compounds, and what the work is beyond cold email.
+- [Issue 01. Cold email is table stakes](https://pushtomain.xyz/newsletter/001.md): Why a good GTM engineer compounds, and what the work is beyond cold email.
 
 ## Selected proof
 
 - [Email From Zero](https://pushtomain.xyz/work/email-from-zero.md): Net-new cold-email for a phone-only mineral-rights company
 - [Clinical Signal Platform](https://pushtomain.xyz/work/clinical-signal-platform.md): Healthcare data platform + federal exclusion screening
-- [Scalphunter](https://pushtomain.xyz/work/scalphunter.md): M&A-arbitrage propensity universe — 1,336 companies
+- [Scalphunter](https://pushtomain.xyz/work/scalphunter.md): M&A-arbitrage propensity universe. 1,336 companies
 - [Merlin](https://pushtomain.xyz/work/merlin.md): Funding-round signal engine on Cloudflare
 - [SEC Form D Pipeline](https://pushtomain.xyz/work/sec-form-d-pipeline.md): 14,749 newly-funded companies from ~99K filings
 - [Punch GTM](https://pushtomain.xyz/work/punch-gtm.md): AI-powered outbound agency

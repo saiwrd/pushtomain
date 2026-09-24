@@ -451,7 +451,7 @@ footer { border-top: 1px solid var(--rule); padding: clamp(2.5rem,6vw,4rem) 0 cl
     align-items: flex-start;
     gap: 0.75rem;
   }
-  .top-nav a[href="#how"],
+  .top-nav a[href="/#how"],
   .top-nav a[href="/services/"] { display: none; }
   .hero-ctas .visit { width: 100%; justify-content: center; }
   .letter-form button { width: 100%; }
