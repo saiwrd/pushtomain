@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client intake · Joel Martinez · GTM Engineer</title>
-  <meta name="description" content="Tell Joel who you sell to. Company, buyer, list, and the questions you want answered before the first conversation.">
+  <meta name="description" content="Client intake for Joel Martinez. Company, customers, the deal you want more of, your CRM, and how outbound works today.">
   <meta property="og:title" content="Client intake · Who you sell to">
-  <meta property="og:description" content="A short brief on the company, the buyer, and whether a list already exists.">
+  <meta property="og:description" content="Company, customers, the deal you want more of, your CRM, and how outbound works today.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pushtomain.xyz/intake/">
   <link rel="canonical" href="https://pushtomain.xyz/intake/">
@@ -31,11 +31,11 @@
     <section class="detail-hero">
       <p class="kicker reveal d2">Client intake</p>
       <h1 class="detail-title reveal d3">Who you sell to.</h1>
-      <p class="detail-lede reveal d4">Company, buyer, and whether a list already exists. I read this before the first conversation. The first conversation is about the goal, not a pitch.</p>
+      <p class="detail-lede reveal d4">Customers, the deal you want more of, your CRM, and how outbound works today. I read this before the first conversation. The first conversation is about the goal, not a pitch.</p>
     </section>
 
     <section class="intake reveal d5">
-      <form class="intake-form" action="https://formsubmit.co/joel@pushtomain.xyz" method="POST">
+      <form class="intake-form" action="https://formsubmit.co/joel@pushtomain.xyz" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="Client intake">
         <input type="hidden" name="_next" value="https://pushtomain.xyz/intake/thanks/">
         <input type="hidden" name="_captcha" value="false">
@@ -43,8 +43,13 @@
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="field">
-          <label for="company">Company</label>
-          <input id="company" name="Company" type="text" required autocomplete="organization">
+          <label for="company-name">Company name</label>
+          <input id="company-name" name="Company name" type="text" required autocomplete="organization">
+        </div>
+
+        <div class="field">
+          <label for="website">Website</label>
+          <input id="website" name="Website" type="text" required inputmode="url" autocomplete="url" placeholder="https://">
         </div>
 
         <div class="field">
@@ -58,52 +63,187 @@
         </div>
 
         <div class="field">
-          <label for="website">Website</label>
-          <input id="website" name="Website" type="text" required inputmode="url" autocomplete="url" placeholder="https://">
+          <label for="paying-customers">How many paying customers do you have?</label>
+          <input id="paying-customers" name="Paying customers" type="number" required min="0" step="1" inputmode="numeric">
+        </div>
+
+        <p class="block-note">If you have more than a handful of customers, choose your ideal closed-won deal and focus on that for the questions below.</p>
+
+        <div class="field">
+          <label for="customer-titles">What are the titles of the customers that closed?</label>
+          <textarea id="customer-titles" name="Titles of the customers that closed" required rows="4"></textarea>
         </div>
 
         <div class="field">
-          <label for="what-you-sell">What you sell</label>
-          <textarea id="what-you-sell" name="What you sell" required rows="4"></textarea>
+          <label for="business-context">What was happening inside their business when they started looking for a solution?</label>
+          <textarea id="business-context" name="What was happening when they started looking" required rows="5"></textarea>
         </div>
 
         <div class="field">
-          <label for="who-you-sell-to">Who you sell to</label>
-          <textarea id="who-you-sell-to" name="Who you sell to" required rows="4"></textarea>
+          <label for="funnel-source">How did they first come into your funnel (referral, outbound, event, etc.)?</label>
+          <textarea id="funnel-source" name="How they first came into the funnel" required rows="4"></textarea>
         </div>
 
         <div class="field">
-          <label for="buyer-titles">Buyer titles</label>
-          <input id="buyer-titles" name="Buyer titles" type="text" required placeholder="VP Sales, Head of RevOps">
+          <label for="problem">What specific problem or use case were they trying to solve?</label>
+          <textarea id="problem" name="Problem or use case" required rows="5"></textarea>
         </div>
 
         <div class="field">
-          <label for="company-size">Company size</label>
-          <input id="company-size" name="Company size" type="text" required placeholder="People, or revenue">
+          <label for="urgency">Why was solving this problem urgent or important for them?</label>
+          <textarea id="urgency" name="Why solving it was urgent" required rows="5"></textarea>
         </div>
 
         <div class="field">
-          <label for="geography">Geography</label>
-          <input id="geography" name="Geography" type="text" required placeholder="Where the buyers are">
+          <label for="decision-makers">Who was involved in the decision (titles/roles)?</label>
+          <textarea id="decision-makers" name="Who was involved in the decision" required rows="4"></textarea>
         </div>
 
         <div class="field">
-          <p class="field-label" id="list-label">Do you have a list</p>
-          <div class="choice-list" role="radiogroup" aria-labelledby="list-label">
-            <label><input type="radio" name="Do you have a list" value="Yes, about 1000+" required> Yes, about 1000+</label>
-            <label><input type="radio" name="Do you have a list" value="Yes, smaller"> Yes, smaller</label>
-            <label><input type="radio" name="Do you have a list" value="No, please build it"> No, please build it</label>
-          </div>
+          <label for="other-vendors">Did they evaluate other vendors, and what tipped the scale in your favor?</label>
+          <textarea id="other-vendors" name="Other vendors and what tipped the scale" required rows="5"></textarea>
         </div>
 
         <div class="field">
-          <label for="questions">Questions for us <span class="optional">optional</span></label>
-          <textarea id="questions" name="Questions for us" rows="4"></textarea>
+          <label for="objections">What objections or concerns did you have to overcome?</label>
+          <textarea id="objections" name="Objections or concerns" required rows="5"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="solved">What did you ultimately help them solve?</label>
+          <textarea id="solved" name="What you helped them solve" required rows="5"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="results">What measurable results or wins have they seen so far?</label>
+          <textarea id="results" name="Measurable results or wins" required rows="5"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="expand">What would make them want to expand with you further?</label>
+          <textarea id="expand" name="What would make them expand" required rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="risk">What could put the relationship at risk?</label>
+          <textarea id="risk" name="What could put the relationship at risk" required rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="tam">How many companies in your TAM can you target? It's ok if you don't know this.</label>
+          <textarea id="tam" name="Companies in TAM" rows="3"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="bad-fit">Is there anyone you cannot serve or is an obvious bad fit? (regional issues, privacy/security, technical limitations)</label>
+          <textarea id="bad-fit" name="Who you cannot serve or is a bad fit" required rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="revenue-goal">What is your revenue goal over the next 12 months?</label>
+          <input id="revenue-goal" name="Revenue goal over the next 12 months" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="acv">What's your ACV?</label>
+          <input id="acv" name="ACV" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="outbound-meetings">How many meetings with relevant prospects are you currently setting each month from outbound?</label>
+          <input id="outbound-meetings" name="Outbound meetings set each month" type="number" required min="0" step="1" inputmode="numeric">
+        </div>
+
+        <div class="field">
+          <label for="proof-accounts">Accounts or wins to mention when reaching out. Add as many as you can.</label>
+          <textarea id="proof-accounts" name="Accounts or wins to mention" required rows="5"></textarea>
+        </div>
+
+        <p class="hint" id="file-limit">You can choose more than one file on each upload. Attachments are emailed with the form, and all files on this submission together need to stay under 10 MB.</p>
+
+        <div class="field">
+          <label for="messaging-docs">Current messaging docs <span class="optional">optional</span></label>
+          <input id="messaging-docs" name="Current messaging docs" type="file" multiple data-name="Current messaging docs">
+        </div>
+
+        <div class="field">
+          <label for="call-recording">Do you record sales calls? If so, what tool, and can you grant view access?</label>
+          <textarea id="call-recording" name="Sales call recording" required rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="strategy-docs">Relevant strategy docs <span class="optional">optional</span></label>
+          <input id="strategy-docs" name="Relevant strategy docs" type="file" multiple data-name="Relevant strategy docs">
+        </div>
+
+        <div class="field">
+          <label for="revenue-team">Org chart or a description of the revenue team</label>
+          <textarea id="revenue-team" name="Revenue team" required rows="5"></textarea>
+          <label class="file-label" for="org-chart">Upload an org chart <span class="optional">optional</span></label>
+          <input id="org-chart" name="Org chart" type="file" multiple data-name="Org chart">
+        </div>
+
+        <fieldset>
+          <legend>Which CRM</legend>
+          <label class="choice"><input type="radio" name="Which CRM" value="Attio" required> Attio</label>
+          <label class="choice"><input type="radio" name="Which CRM" value="Hubspot"> Hubspot</label>
+          <label class="choice"><input type="radio" name="Which CRM" value="Salesforce"> Salesforce</label>
+          <label class="choice"><input type="radio" name="Which CRM" value="Airtable"> Airtable</label>
+          <label class="choice"><input type="radio" name="Which CRM" value="Google Sheets"> Google Sheets</label>
+          <label class="choice"><input type="radio" name="Which CRM" value="Other / don't have one"> Other / don't have one</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Where do you need the most help with your CRM? Check all that apply.</legend>
+          <label class="choice"><input type="checkbox" name="CRM help: Connecting outbound tools/automations" value="Yes"> Connecting outbound tools/automations</label>
+          <label class="choice"><input type="checkbox" name="CRM help: Reporting and attribution" value="Yes"> Reporting and attribution</label>
+          <label class="choice"><input type="checkbox" name="CRM help: Ongoing maintenance" value="Yes"> Ongoing maintenance</label>
+          <label class="choice"><input type="checkbox" name="CRM help: High level strategy and guidance" value="Yes"> High level strategy and guidance</label>
+          <label class="choice"><input type="checkbox" name="CRM help: We have this handled" value="Yes"> We have this handled</label>
+        </fieldset>
+
+        <div class="field">
+          <label for="exclusion-list">Exclusion list</label>
+          <p class="hint">A company-domain column is needed.</p>
+          <input id="exclusion-list" name="Exclusion list" type="file" multiple required data-name="Exclusion list">
+        </div>
+
+        <fieldset>
+          <legend>Do you have a list to work?</legend>
+          <label class="choice"><input type="radio" name="Do you have a list to work" value="Yes, about 1000+" required> Yes, about 1000+</label>
+          <label class="choice"><input type="radio" name="Do you have a list to work" value="Yes, smaller"> Yes, smaller</label>
+          <label class="choice"><input type="radio" name="Do you have a list to work" value="No, please build it"> No, please build it</label>
+        </fieldset>
+
+        <div class="field">
+          <label for="linkedin-accounts">If LinkedIn outreach runs, whose accounts are used?</label>
+          <p class="hint">A max of 25 connection requests a day.</p>
+          <textarea id="linkedin-accounts" name="LinkedIn accounts used" required rows="3"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="outbound-process">What's the current outbound process, and what has worked or not?</label>
+          <textarea id="outbound-process" name="Current outbound process" required rows="5"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="meetings-booked-for">Who are meetings booked for, and what booking tool?</label>
+          <textarea id="meetings-booked-for" name="Who meetings are booked for and booking tool" required rows="3"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="calendar-links">Calendar links</label>
+          <textarea id="calendar-links" name="Calendar links" required rows="3" placeholder="https://"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="email-senders">Who are the email senders?</label>
+          <textarea id="email-senders" name="Email senders" required rows="3"></textarea>
         </div>
 
         <div class="intake-actions">
           <button type="submit">Send the brief</button>
-          <p class="form-note">Goes to Joel at joel@pushtomain.xyz.</p>
+          <p class="form-note">Goes to Joel at joel@pushtomain.xyz. Replies go to the contact email above. All attached files together need to stay under 10 MB.</p>
         </div>
       </form>
     </section>
@@ -124,5 +264,62 @@
     </footer>
 
   </div>
+  <script>
+    (function () {
+      var form = document.querySelector(".intake-form");
+      if (!form) return;
+
+      function restoreFiles() {
+        form.querySelectorAll("input.file-clone").forEach(function (node) {
+          node.remove();
+        });
+        form.querySelectorAll('input[type="file"][data-name]').forEach(function (input) {
+          if (!input.name) input.name = input.getAttribute("data-name");
+        });
+      }
+
+      window.addEventListener("pageshow", restoreFiles);
+
+      form.addEventListener("submit", function () {
+        var email = document.getElementById("contact-email");
+        var reply = form.querySelector('input[name="_replyto"]');
+        if (!reply) {
+          reply = document.createElement("input");
+          reply.type = "hidden";
+          reply.name = "_replyto";
+          form.appendChild(reply);
+        }
+        reply.value = email.value;
+
+        restoreFiles();
+
+        form.querySelectorAll('input[type="file"][multiple]').forEach(function (input) {
+          var files = Array.prototype.slice.call(input.files || []);
+          if (files.length < 2 || typeof DataTransfer !== "function") return;
+          var base = input.getAttribute("data-name") || input.name;
+          var clones = [];
+          try {
+            files.forEach(function (file, index) {
+              var clone = document.createElement("input");
+              clone.type = "file";
+              clone.className = "file-clone";
+              clone.name = index === 0 ? base : base + " " + (index + 1);
+              clone.tabIndex = -1;
+              var transfer = new DataTransfer();
+              transfer.items.add(file);
+              clone.files = transfer.files;
+              clones.push(clone);
+            });
+          } catch (err) {
+            return;
+          }
+          clones.forEach(function (clone) {
+            input.insertAdjacentElement("afterend", clone);
+          });
+          input.removeAttribute("name");
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
