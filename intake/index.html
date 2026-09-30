@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client intake · Joel Martinez · GTM Engineer</title>
+  <meta name="description" content="Tell Joel who you sell to. Company, buyer, list, and the questions you want answered before the first conversation.">
+  <meta property="og:title" content="Client intake · Who you sell to">
+  <meta property="og:description" content="A short brief on the company, the buyer, and whether a list already exists.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pushtomain.xyz/intake/">
+  <link rel="canonical" href="https://pushtomain.xyz/intake/">
+  <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="topbar">
+      <a class="mark" href="/">push to main</a>
+      <nav class="top-nav">
+        <a href="/#how">How I help</a>
+        <a href="/about/">About</a>
+        <a href="/newsletter/">Newsletter</a>
+        <a href="/services/">Services</a>
+        <a href="/intake/">Start</a>
+      </nav>
+    </header>
+
+    <section class="detail-hero">
+      <p class="kicker reveal d2">Client intake</p>
+      <h1 class="detail-title reveal d3">Who you sell to.</h1>
+      <p class="detail-lede reveal d4">Company, buyer, and whether a list already exists. I read this before the first conversation. The first conversation is about the goal, not a pitch.</p>
+    </section>
+
+    <section class="intake reveal d5">
+      <form class="intake-form" action="https://formsubmit.co/joel@pushtomain.xyz" method="POST">
+        <input type="hidden" name="_subject" value="Client intake">
+        <input type="hidden" name="_next" value="https://pushtomain.xyz/intake/thanks/">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="field">
+          <label for="company">Company</label>
+          <input id="company" name="Company" type="text" required autocomplete="organization">
+        </div>
+
+        <div class="field">
+          <label for="contact-name">Contact name</label>
+          <input id="contact-name" name="Contact name" type="text" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="contact-email">Contact email</label>
+          <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
+        </div>
+
+        <div class="field">
+          <label for="website">Website</label>
+          <input id="website" name="Website" type="text" required inputmode="url" autocomplete="url" placeholder="https://">
+        </div>
+
+        <div class="field">
+          <label for="what-you-sell">What you sell</label>
+          <textarea id="what-you-sell" name="What you sell" required rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="who-you-sell-to">Who you sell to</label>
+          <textarea id="who-you-sell-to" name="Who you sell to" required rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="buyer-titles">Buyer titles</label>
+          <input id="buyer-titles" name="Buyer titles" type="text" required placeholder="VP Sales, Head of RevOps">
+        </div>
+
+        <div class="field">
+          <label for="company-size">Company size</label>
+          <input id="company-size" name="Company size" type="text" required placeholder="People, or revenue">
+        </div>
+
+        <div class="field">
+          <label for="geography">Geography</label>
+          <input id="geography" name="Geography" type="text" required placeholder="Where the buyers are">
+        </div>
+
+        <div class="field">
+          <p class="field-label" id="list-label">Do you have a list</p>
+          <div class="choice-list" role="radiogroup" aria-labelledby="list-label">
+            <label><input type="radio" name="Do you have a list" value="Yes, about 1000+" required> Yes, about 1000+</label>
+            <label><input type="radio" name="Do you have a list" value="Yes, smaller"> Yes, smaller</label>
+            <label><input type="radio" name="Do you have a list" value="No, please build it"> No, please build it</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="questions">Questions for us <span class="optional">optional</span></label>
+          <textarea id="questions" name="Questions for us" rows="4"></textarea>
+        </div>
+
+        <div class="intake-actions">
+          <button type="submit">Send the brief</button>
+          <p class="form-note">Goes to Joel at joel@pushtomain.xyz.</p>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div class="foot-grid">
+        <nav class="foot-links">
+          <a href="/">Home</a>
+          <a href="mailto:joel@pushtomain.xyz">Email</a>
+          <a href="/about/">About</a>
+          <a href="/services/">Services</a>
+        </nav>
+        <p class="colophon">
+          Handwritten HTML. Self-hosted type (Apfel Grotezk by Collletttivo).
+          Shipped on Cloudflare. <span class="wordmark">push to main</span> · © 2026
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

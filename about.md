@@ -114,4 +114,4 @@ Engagements are scoped per client. You pick three or four items from the service
 
 ### How do we get started?
 
-Email [joel@pushtomain.xyz](mailto:joel@pushtomain.xyz) with what you sell and the number you are trying to hit. The first conversation is about the goal, not a pitch.
+Send the brief on the [intake form](https://pushtomain.xyz/intake/), or email [joel@pushtomain.xyz](mailto:joel@pushtomain.xyz) with what you sell and the number you are trying to hit. The first conversation is about the goal, not a pitch.
