@@ -295,6 +295,10 @@
 
         form.querySelectorAll('input[type="file"][multiple]').forEach(function (input) {
           var files = Array.prototype.slice.call(input.files || []);
+          if (!files.length) {
+            input.removeAttribute("name");
+            return;
+          }
           if (files.length < 2 || typeof DataTransfer !== "function") return;
           var base = input.getAttribute("data-name") || input.name;
           var clones = [];
@@ -313,8 +317,10 @@
           } catch (err) {
             return;
           }
+          var anchor = input;
           clones.forEach(function (clone) {
-            input.insertAdjacentElement("afterend", clone);
+            anchor.insertAdjacentElement("afterend", clone);
+            anchor = clone;
           });
           input.removeAttribute("name");
         });
