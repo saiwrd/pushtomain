@@ -566,100 +566,125 @@ footer { border-top: 1px solid var(--rule); padding: clamp(2.5rem,6vw,4rem) 0 cl
 /* ── Client intake ── */
 .intake { border-top: none; padding-top: 0; }
 .intake-form {
-  border-top: 1.5px solid var(--ink);
-  max-width: 46rem;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
 }
-.intake-form .field {
-  display: grid;
-  grid-template-columns: 12rem minmax(0, 1fr);
-  gap: 0.35rem 1.2rem;
-  align-items: start;
-  padding: 0.95rem 0;
-  border-bottom: 1px solid var(--rule);
+.intake-form .field,
+.intake-form fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
 }
-.intake-form .field-label,
-.intake-form label {
+.intake-form label,
+.intake-form legend {
   font-weight: 500;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-top: 0.45rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  padding: 0;
 }
 .intake-form .optional {
-  display: inline-block;
-  margin-left: 0.35rem;
-  text-transform: none;
-  letter-spacing: 0;
   font-weight: 400;
-  font-size: 0.78rem;
+  color: var(--muted);
+}
+.intake-form .hint,
+.intake-form .block-note {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  max-width: 62ch;
+}
+.intake-form .block-note {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--ink);
+  background: var(--paper-2);
 }
 .intake-form input[type="text"],
 .intake-form input[type="email"],
+.intake-form input[type="number"],
 .intake-form textarea {
   font: inherit;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.45;
   color: var(--ink);
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0.35rem 0;
-  outline: none;
+  background: #fff;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  padding: 0.55rem 0.7rem;
   width: 100%;
+  max-width: 100%;
 }
 .intake-form textarea {
-  min-height: 6.2rem;
+  min-height: 7.5rem;
   resize: vertical;
-  line-height: 1.5;
 }
 .intake-form input::placeholder,
 .intake-form textarea::placeholder { color: var(--muted); }
-.intake-form .field:focus-within { border-bottom-color: var(--green); }
-.intake-form .choice-list {
-  display: grid;
-  gap: 0.5rem;
-  padding-top: 0.35rem;
+.intake-form input:focus,
+.intake-form textarea:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+  border-color: var(--green);
 }
-.intake-form .choice-list label {
+.intake-form input[type="file"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font: inherit;
+  font-size: 1rem;
+}
+.intake-form .file-clone {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.intake-form .file-label { margin-top: 0.45rem; }
+.intake-form .choice {
   display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 1.02rem;
-  font-weight: 500;
-  color: var(--ink);
-  padding-top: 0;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-weight: 400;
   cursor: pointer;
 }
-.intake-form .choice-list input[type="radio"] {
-  accent-color: var(--green);
+.intake-form .choice input {
   width: 1rem;
   height: 1rem;
-  margin: 0;
+  margin-top: 0.3rem;
+  accent-color: var(--green);
   flex: 0 0 auto;
 }
 .intake-actions {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.85rem 1.2rem;
-  padding-top: 1.4rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-top: 0.4rem;
 }
 .intake-form button {
   font: inherit;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
   background: var(--green);
   color: var(--paper);
-  border: none;
+  border: 1px solid var(--green);
   cursor: pointer;
-  padding: 0.7rem 1.15rem;
-  border-radius: 999px;
-  transition: background 0.25s ease, transform 0.25s cubic-bezier(0.2,0.7,0.2,1);
+  padding: 0.65rem 1.1rem;
+  border-radius: 2px;
 }
-.intake-form button:hover { background: var(--green-bright); transform: translateY(-2px); }
+.intake-form button:hover { background: var(--green-bright); border-color: var(--green-bright); }
 @media (max-width: 720px) {
-  .intake-form .field { grid-template-columns: 1fr; gap: 0.2rem; }
   .intake-form button { width: 100%; }
 }
