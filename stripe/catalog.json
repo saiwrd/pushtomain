@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "invoice_defaults": {
+    "collection_method": "send_invoice",
+    "days_until_due": 7,
+    "payment_method_types": ["us_bank_account", "card", "link"]
+  },
+  "payment_methods": {
+    "enabled": ["us_bank_account", "card", "link"],
+    "disabled": ["klarna"]
+  },
+  "products": [
+    {
+      "recipe_id": "gtm-deposit",
+      "name": "GTM engagement deposit",
+      "description": "One-time deposit to start a go-to-market engagement",
+      "active": true,
+      "prices": [
+        {
+          "lookup_key": "gtm-deposit-usd",
+          "nickname": "Deposit",
+          "unit_amount": 100000,
+          "currency": "usd"
+        }
+      ]
+    },
+    {
+      "recipe_id": "gtm-retainer",
+      "name": "GTM retainer",
+      "description": "$7,000 per month, or $15,666 prepaid for 3 months (25.4% off). ACH preferred on prepaid.",
+      "active": true,
+      "prices": [
+        {
+          "lookup_key": "gtm-retainer-usd-month",
+          "nickname": "Monthly",
+          "unit_amount": 700000,
+          "currency": "usd",
+          "interval": "month"
+        },
+        {
+          "lookup_key": "gtm-retainer-prepaid-3mo-usd",
+          "nickname": "Prepaid 3 months (25.4% off)",
+          "unit_amount": 1566600,
+          "currency": "usd"
+        }
+      ]
+    },
+    {
+      "recipe_id": "strategy-workshop",
+      "name": "Strategy workshop",
+      "description": "One-off workshop, billed as a single invoice",
+      "active": true,
+      "prices": [
+        {
+          "lookup_key": "strategy-workshop-usd",
+          "nickname": "Workshop",
+          "unit_amount": 250000,
+          "currency": "usd"
+        }
+      ]
+    }
+  ]
+}

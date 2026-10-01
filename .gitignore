@@ -1,6 +1,8 @@
 .wrangler/
 .DS_Store
 node_modules/
+.env
+stripe/.env
 
 # working files — never publish (call prep, resume, client data)
 plans/
