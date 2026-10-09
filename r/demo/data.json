@@ -1,0 +1,351 @@
+{
+  "client": "Acme Co",
+  "sample": true,
+  "updated": "2026-10-09",
+  "defaultPeriod": "this-week",
+  "note": "People reached counts phone connects, LinkedIn requests, and emails delivered. Replies are LinkedIn and email. Meetings include the phone.",
+  "weeklyCall": {
+    "when": "Friday, October 9",
+    "minutes": 25,
+    "bullets": [
+      "Logistics is the segment that booked. Ops leaders at 50–200 person firms replied, and we booked four meetings: two on the phone, one on LinkedIn, one by email.",
+      "Phone connect rate moved from 13.6% to 15.1% after Tuesday's number rotation. Keep that rotation.",
+      "Priya at Northwind and Chris at Keel & Harbor both asked for a one-pager before they will meet. Next time, send it the same day.",
+      "Saturday sending is not worth it. One reply, no meetings. Leave the weekend off."
+    ]
+  },
+  "campaigns": [
+    {
+      "name": "Ops leaders, logistics",
+      "channel": "Email",
+      "done": 412,
+      "total": 640,
+      "unit": "sent",
+      "note": "28 replies · 8 positive · 5 days of sending left"
+    },
+    {
+      "name": "Dialer buyers, Q4",
+      "channel": "Phone",
+      "done": 1140,
+      "total": 1800,
+      "unit": "dials",
+      "note": "6 meetings booked"
+    },
+    {
+      "name": "Founder intros, clinics",
+      "channel": "LinkedIn",
+      "done": 186,
+      "total": 250,
+      "unit": "requests",
+      "note": "71 accepted · 4 positive"
+    }
+  ],
+  "periods": [
+    {
+      "id": "this-week",
+      "label": "This week",
+      "range": "Oct 3–9",
+      "deltaLabel": "vs last week",
+      "summary": "This week we reached 269 people, 20 replied, 6 positively, and booked 4 meetings.",
+      "totals": [
+        { "key": "reached", "label": "People reached", "value": 269, "delta": 38 },
+        { "key": "replies", "label": "Replies", "value": 20, "delta": 6 },
+        { "key": "positive", "label": "Positive replies", "value": 6, "delta": 2 },
+        { "key": "meetings", "label": "Meetings booked", "value": 4, "delta": 2 }
+      ],
+      "channels": [
+        {
+          "id": "calling",
+          "label": "Cold calling",
+          "steps": [
+            { "key": "dials", "label": "Dials", "value": 312 },
+            { "key": "connects", "label": "Connects", "value": 47 },
+            { "key": "conversations", "label": "Conversations", "value": 28 },
+            { "key": "meetings", "label": "Meetings", "value": 2 }
+          ]
+        },
+        {
+          "id": "linkedin",
+          "label": "LinkedIn",
+          "meetings": 1,
+          "steps": [
+            { "key": "requests", "label": "Connection requests", "value": 84 },
+            { "key": "accepted", "label": "Accepted", "value": 31 },
+            { "key": "replies", "label": "Replies", "value": 9 },
+            { "key": "positive", "label": "Positive", "value": 3 }
+          ]
+        },
+        {
+          "id": "email",
+          "label": "Email",
+          "meetings": 1,
+          "steps": [
+            { "key": "sent", "label": "Sent", "value": 142 },
+            { "key": "opened", "label": "Opened", "value": 61 },
+            { "key": "replies", "label": "Replies", "value": 11 },
+            { "key": "positive", "label": "Positive", "value": 3 },
+            { "key": "bounces", "label": "Bounces", "value": 4 }
+          ]
+        }
+      ],
+      "activityCaption": "Oct 3–9 · each row scaled to its own peak",
+      "activity": [
+        { "label": "Sat", "date": "Oct 3", "reached": 12, "replies": 1, "meetings": 0 },
+        { "label": "Sun", "date": "Oct 4", "reached": 0, "replies": 0, "meetings": 0 },
+        { "label": "Mon", "date": "Oct 5", "reached": 58, "replies": 4, "meetings": 1 },
+        { "label": "Tue", "date": "Oct 6", "reached": 64, "replies": 5, "meetings": 1 },
+        { "label": "Wed", "date": "Oct 7", "reached": 52, "replies": 4, "meetings": 0 },
+        { "label": "Thu", "date": "Oct 8", "reached": 49, "replies": 3, "meetings": 1 },
+        { "label": "Fri", "date": "Oct 9", "reached": 34, "replies": 3, "meetings": 1 }
+      ],
+      "replies": [
+        {
+          "name": "Samira Qureshi",
+          "title": "Director of Sales",
+          "company": "Lumen & Co.",
+          "channel": "Email",
+          "when": "Fri",
+          "positive": true,
+          "snippet": "Thursday works. Bring the segment math, and send the one-pager ahead of the call."
+        },
+        {
+          "name": "Priya Nandakumar",
+          "title": "VP Revenue",
+          "company": "Northwind Freight",
+          "channel": "Email",
+          "when": "Thu",
+          "positive": true,
+          "snippet": "Send the one-pager. We're replacing the dialer in Q4 and I want to see the list logic."
+        },
+        {
+          "name": "Adele Voss",
+          "title": "CRO",
+          "company": "Brightloom Hardware",
+          "channel": "LinkedIn",
+          "when": "Thu",
+          "positive": true,
+          "snippet": "Booked Tuesday at 10. I'll bring our sales manager."
+        },
+        {
+          "name": "Chris Hollander",
+          "title": "VP Operations",
+          "company": "Keel & Harbor",
+          "channel": "Email",
+          "when": "Wed",
+          "positive": true,
+          "snippet": "Send the one-pager first. If the segment holds up I'll take a meeting."
+        },
+        {
+          "name": "Jonah Peck",
+          "title": "Founder",
+          "company": "Harborline Clinics",
+          "channel": "Email",
+          "when": "Tue",
+          "positive": false,
+          "snippet": "We only buy from people who have worked inside a clinic. Passing."
+        }
+      ]
+    },
+    {
+      "id": "last-week",
+      "label": "Last week",
+      "range": "Sep 26–Oct 2",
+      "deltaLabel": "vs the week before",
+      "summary": "Last week we reached 231 people, 14 replied, 4 positively, and booked 2 meetings.",
+      "totals": [
+        { "key": "reached", "label": "People reached", "value": 231, "delta": 5 },
+        { "key": "replies", "label": "Replies", "value": 14, "delta": 0 },
+        { "key": "positive", "label": "Positive replies", "value": 4, "delta": 0 },
+        { "key": "meetings", "label": "Meetings booked", "value": 2, "delta": 0 }
+      ],
+      "channels": [
+        {
+          "id": "calling",
+          "label": "Cold calling",
+          "steps": [
+            { "key": "dials", "label": "Dials", "value": 286 },
+            { "key": "connects", "label": "Connects", "value": 39 },
+            { "key": "conversations", "label": "Conversations", "value": 22 },
+            { "key": "meetings", "label": "Meetings", "value": 1 }
+          ]
+        },
+        {
+          "id": "linkedin",
+          "label": "LinkedIn",
+          "meetings": 1,
+          "steps": [
+            { "key": "requests", "label": "Connection requests", "value": 70 },
+            { "key": "accepted", "label": "Accepted", "value": 24 },
+            { "key": "replies", "label": "Replies", "value": 6 },
+            { "key": "positive", "label": "Positive", "value": 2 }
+          ]
+        },
+        {
+          "id": "email",
+          "label": "Email",
+          "meetings": 0,
+          "steps": [
+            { "key": "sent", "label": "Sent", "value": 128 },
+            { "key": "opened", "label": "Opened", "value": 49 },
+            { "key": "replies", "label": "Replies", "value": 8 },
+            { "key": "positive", "label": "Positive", "value": 2 },
+            { "key": "bounces", "label": "Bounces", "value": 6 }
+          ]
+        }
+      ],
+      "activityCaption": "Sep 26–Oct 2 · each row scaled to its own peak",
+      "activity": [
+        { "label": "Sat", "date": "Sep 26", "reached": 10, "replies": 0, "meetings": 0 },
+        { "label": "Sun", "date": "Sep 27", "reached": 0, "replies": 0, "meetings": 0 },
+        { "label": "Mon", "date": "Sep 28", "reached": 48, "replies": 3, "meetings": 0 },
+        { "label": "Tue", "date": "Sep 29", "reached": 51, "replies": 3, "meetings": 1 },
+        { "label": "Wed", "date": "Sep 30", "reached": 46, "replies": 3, "meetings": 0 },
+        { "label": "Thu", "date": "Oct 1", "reached": 42, "replies": 3, "meetings": 1 },
+        { "label": "Fri", "date": "Oct 2", "reached": 34, "replies": 2, "meetings": 0 }
+      ],
+      "replies": [
+        {
+          "name": "Dana Ruiz",
+          "title": "General Manager",
+          "company": "Stackmill",
+          "channel": "LinkedIn",
+          "when": "Thu",
+          "positive": true,
+          "snippet": "Thursday at 9 works. Send a short note I can forward to the owner."
+        },
+        {
+          "name": "Nina Calder",
+          "title": "Owner",
+          "company": "Calder Field Services",
+          "channel": "Email",
+          "when": "Wed",
+          "positive": true,
+          "snippet": "Curious. Send the one-pager. Not ready to meet yet."
+        },
+        {
+          "name": "Omar Benali",
+          "title": "Director of Ops",
+          "company": "Stackmill",
+          "channel": "Email",
+          "when": "Tue",
+          "positive": false,
+          "snippet": "Wrong person. Try our GM, Dana Ruiz."
+        },
+        {
+          "name": "Helen Cho",
+          "title": "Founder",
+          "company": "Little Gauge",
+          "channel": "Email",
+          "when": "Mon",
+          "positive": false,
+          "snippet": "We paused outbound tools until January."
+        }
+      ]
+    },
+    {
+      "id": "all-time",
+      "label": "All time",
+      "range": "Aug 10–Oct 9",
+      "deltaLabel": null,
+      "summary": "Since August 10 we have reached 1,833 people, 110 replied, 29 positively, and booked 20 meetings.",
+      "totals": [
+        { "key": "reached", "label": "People reached", "value": 1833, "delta": null },
+        { "key": "replies", "label": "Replies", "value": 110, "delta": null },
+        { "key": "positive", "label": "Positive replies", "value": 29, "delta": null },
+        { "key": "meetings", "label": "Meetings booked", "value": 20, "delta": null }
+      ],
+      "channels": [
+        {
+          "id": "calling",
+          "label": "Cold calling",
+          "steps": [
+            { "key": "dials", "label": "Dials", "value": 2265 },
+            { "key": "connects", "label": "Connects", "value": 309 },
+            { "key": "conversations", "label": "Conversations", "value": 167 },
+            { "key": "meetings", "label": "Meetings", "value": 9 }
+          ]
+        },
+        {
+          "id": "linkedin",
+          "label": "LinkedIn",
+          "meetings": 6,
+          "steps": [
+            { "key": "requests", "label": "Connection requests", "value": 573 },
+            { "key": "accepted", "label": "Accepted", "value": 194 },
+            { "key": "replies", "label": "Replies", "value": 48 },
+            { "key": "positive", "label": "Positive", "value": 14 }
+          ]
+        },
+        {
+          "id": "email",
+          "label": "Email",
+          "meetings": 5,
+          "steps": [
+            { "key": "sent", "label": "Sent", "value": 995 },
+            { "key": "opened", "label": "Opened", "value": 376 },
+            { "key": "replies", "label": "Replies", "value": 62 },
+            { "key": "positive", "label": "Positive", "value": 15 },
+            { "key": "bounces", "label": "Bounces", "value": 44 }
+          ]
+        }
+      ],
+      "activityCaption": "Last 7 days · each row scaled to its own peak",
+      "activity": [
+        { "label": "Sat", "date": "Oct 3", "reached": 12, "replies": 1, "meetings": 0 },
+        { "label": "Sun", "date": "Oct 4", "reached": 0, "replies": 0, "meetings": 0 },
+        { "label": "Mon", "date": "Oct 5", "reached": 58, "replies": 4, "meetings": 1 },
+        { "label": "Tue", "date": "Oct 6", "reached": 64, "replies": 5, "meetings": 1 },
+        { "label": "Wed", "date": "Oct 7", "reached": 52, "replies": 4, "meetings": 0 },
+        { "label": "Thu", "date": "Oct 8", "reached": 49, "replies": 3, "meetings": 1 },
+        { "label": "Fri", "date": "Oct 9", "reached": 34, "replies": 3, "meetings": 1 }
+      ],
+      "replies": [
+        {
+          "name": "Samira Qureshi",
+          "title": "Director of Sales",
+          "company": "Lumen & Co.",
+          "channel": "Email",
+          "when": "Fri",
+          "positive": true,
+          "snippet": "Thursday works. Bring the segment math, and send the one-pager ahead of the call."
+        },
+        {
+          "name": "Priya Nandakumar",
+          "title": "VP Revenue",
+          "company": "Northwind Freight",
+          "channel": "Email",
+          "when": "Thu",
+          "positive": true,
+          "snippet": "Send the one-pager. We're replacing the dialer in Q4 and I want to see the list logic."
+        },
+        {
+          "name": "Adele Voss",
+          "title": "CRO",
+          "company": "Brightloom Hardware",
+          "channel": "LinkedIn",
+          "when": "Thu",
+          "positive": true,
+          "snippet": "Booked Tuesday at 10. I'll bring our sales manager."
+        },
+        {
+          "name": "Chris Hollander",
+          "title": "VP Operations",
+          "company": "Keel & Harbor",
+          "channel": "Email",
+          "when": "Wed",
+          "positive": true,
+          "snippet": "Send the one-pager first. If the segment holds up I'll take a meeting."
+        },
+        {
+          "name": "Jonah Peck",
+          "title": "Founder",
+          "company": "Harborline Clinics",
+          "channel": "Email",
+          "when": "Tue",
+          "positive": false,
+          "snippet": "We only buy from people who have worked inside a clinic. Passing."
+        }
+      ]
+    }
+  ]
+}

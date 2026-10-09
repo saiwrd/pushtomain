@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results · push to main</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Private weekly results. Not indexed.">
+  <link rel="preload" href="/fonts/ApfelGrotezk-Fett.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Mittel.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ApfelGrotezk-Brukt.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/r/report.css">
+</head>
+<body class="report">
+  <div class="wrap">
+
+    <header class="topbar">
+      <a class="mark" href="/">push to main</a>
+      <p class="who"><span id="client-name">Results</span> <span class="tag soon" id="sample-tag" hidden>Sample</span></p>
+    </header>
+
+    <section class="report-hero">
+      <p class="kicker" id="kicker">Weekly results</p>
+      <h1 class="summary" id="summary">Loading the report…</h1>
+      <div class="period-row">
+        <div class="periods" id="periods" role="radiogroup" aria-label="Time range"></div>
+        <p class="range" id="range"></p>
+      </div>
+      <noscript><p class="noscript">This report reads its numbers from data.json and needs JavaScript to draw them.</p></noscript>
+    </section>
+
+    <section aria-labelledby="totals-label">
+      <h2 class="sr-only" id="totals-label">Totals</h2>
+      <div class="stat-grid" id="stats"></div>
+      <p class="delta-key" id="delta-key" hidden></p>
+      <p class="stat-note" id="note" hidden></p>
+    </section>
+
+    <section aria-labelledby="channels-label">
+      <h2 class="label" id="channels-label">Channels</h2>
+      <div class="channel-grid" id="channels"></div>
+    </section>
+
+    <section aria-labelledby="activity-label">
+      <div class="section-head">
+        <h2 class="label" id="activity-label">Activity</h2>
+        <p class="aside" id="activity-caption"></p>
+      </div>
+      <div id="chart" aria-hidden="true"></div>
+      <div id="chart-fallback"></div>
+    </section>
+
+    <section>
+      <div class="split-grid">
+        <div>
+          <h2 class="label">Latest replies</h2>
+          <div id="replies"></div>
+        </div>
+        <div>
+          <h2 class="label">Last weekly call</h2>
+          <div id="call"></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="campaigns-label">
+      <h2 class="label" id="campaigns-label">Active campaigns</h2>
+      <div id="campaigns"></div>
+    </section>
+
+    <footer>
+      <div class="foot-grid">
+        <p class="colophon" id="foot"></p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+(function () {
+  var summaryEl = document.getElementById("summary");
+  var dataUrl = new URL("data.json", window.location.href);
+
+  fetch(dataUrl.href)
+    .then(function (res) {
+      if (!res.ok) throw new Error(String(res.status));
+      return res.json();
+    })
+    .then(render)
+    .catch(function () {
+      summaryEl.textContent = "This report could not load data.json.";
+    });
+
+  function render(data) {
+    var periods = data.periods || [];
+    if (!periods.length) {
+      summaryEl.textContent = "This report has no periods in data.json.";
+      return;
+    }
+
+    document.title = (data.client || "Results") + " · Results · push to main";
+    document.getElementById("client-name").textContent = data.client || "Results";
+    if (data.sample) document.getElementById("sample-tag").hidden = false;
+
+    var kicker = data.sample ? "Sample report" : "Weekly results";
+    if (data.updated) kicker += " · Updated " + formatDay(data.updated);
+    document.getElementById("kicker").textContent = kicker;
+
+    var note = document.getElementById("note");
+    if (data.note) {
+      note.hidden = false;
+      note.textContent = data.note;
+    }
+
+    renderCall(data.weeklyCall);
+    renderCampaigns(data.campaigns || []);
+    renderFooter(data);
+
+    var group = document.getElementById("periods");
+    periods.forEach(function (period, i) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.setAttribute("role", "radio");
+      btn.dataset.id = period.id;
+      btn.textContent = period.label;
+      btn.addEventListener("click", function () { select(period.id, false); });
+      btn.addEventListener("keydown", function (event) { onKey(event, i); });
+      group.appendChild(btn);
+    });
+
+    function onKey(event, index) {
+      var next = index;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % periods.length;
+      else if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index - 1 + periods.length) % periods.length;
+      else return;
+      event.preventDefault();
+      select(periods[next].id, false);
+      group.querySelector('[data-id="' + periods[next].id + '"]').focus();
+    }
+
+    function select(id, replace) {
+      var period = periods.filter(function (p) { return p.id === id; })[0] || periods[0];
+      group.querySelectorAll("button").forEach(function (btn) {
+        var on = btn.dataset.id === period.id;
+        btn.setAttribute("aria-checked", on ? "true" : "false");
+        btn.tabIndex = on ? 0 : -1;
+      });
+      paint(data, period);
+      var hash = "#" + period.id;
+      if (window.location.hash !== hash) {
+        if (replace) history.replaceState(null, "", hash);
+        else history.pushState(null, "", hash);
+      }
+    }
+
+    window.addEventListener("hashchange", function () {
+      select(window.location.hash.slice(1), true);
+    });
+
+    var fromHash = window.location.hash.slice(1);
+    var initial = periods.some(function (p) { return p.id === fromHash; })
+      ? fromHash
+      : (data.defaultPeriod || periods[0].id);
+    select(initial, true);
+  }
+
+  function paint(data, period) {
+    summaryEl.textContent = period.summary || "";
+    document.getElementById("range").textContent = period.range || "";
+    renderStats(period);
+    renderChannels(period.channels || []);
+    renderActivity(period);
+    renderReplies(period.replies || []);
+  }
+
+  function renderStats(period) {
+    var grid = document.getElementById("stats");
+    var key = document.getElementById("delta-key");
+    grid.replaceChildren();
+    var anyDelta = false;
+    (period.totals || []).forEach(function (item) {
+      var stat = document.createElement("div");
+      stat.className = "stat";
+      var big = document.createElement("p");
+      big.className = "big";
+      big.textContent = formatNum(item.value);
+      var cap = document.createElement("p");
+      cap.className = "cap";
+      cap.textContent = item.label;
+      stat.append(big, cap);
+      if (period.deltaLabel && item.delta !== null && item.delta !== undefined) {
+        anyDelta = true;
+        var delta = document.createElement("p");
+        delta.className = "delta " + deltaClass(item.delta);
+        delta.textContent = formatDelta(item.delta);
+        stat.appendChild(delta);
+      }
+      grid.appendChild(stat);
+    });
+    if (anyDelta) {
+      key.hidden = false;
+      key.textContent = "Change " + period.deltaLabel + ".";
+    } else {
+      key.hidden = true;
+      key.textContent = "";
+    }
+  }
+
+  function renderChannels(channels) {
+    var root = document.getElementById("channels");
+    root.replaceChildren();
+    channels.forEach(function (channel) {
+      var card = document.createElement("div");
+      card.className = "channel";
+      var title = document.createElement("h3");
+      title.textContent = channel.label;
+      card.appendChild(title);
+
+      var steps = (channel.steps || []).filter(function (step) {
+        return step.value !== null && step.value !== undefined && step.key !== "bounces";
+      });
+      var base = steps.length ? steps[0].value : 0;
+      steps.forEach(function (step, i) {
+        var row = document.createElement("div");
+        row.className = "step";
+        var top = document.createElement("div");
+        top.className = "step-row";
+        var label = document.createElement("span");
+        label.textContent = step.label;
+        var val = document.createElement("span");
+        val.className = "val";
+        val.textContent = formatNum(step.value);
+        top.append(label, val);
+        var track = document.createElement("div");
+        track.className = "track";
+        var fill = document.createElement("div");
+        fill.className = "fill" + (step.value > 0 ? " on" : "");
+        var width = base > 0 ? (step.value / base) * 100 : 0;
+        fill.style.width = width + "%";
+        track.appendChild(fill);
+        row.append(top, track);
+        if (i > 0 && steps[i - 1].value > 0) {
+          var rate = document.createElement("p");
+          rate.className = "rate";
+          rate.textContent = percent(step.value, steps[i - 1].value) + " of " + steps[i - 1].label.toLowerCase();
+          row.appendChild(rate);
+        }
+        card.appendChild(row);
+      });
+
+      var bounce = (channel.steps || []).filter(function (step) {
+        return step.key === "bounces" && step.value !== null && step.value !== undefined;
+      })[0];
+      if (bounce) {
+        var sent = (channel.steps || []).filter(function (step) { return step.key === "sent"; })[0];
+        var leak = document.createElement("p");
+        leak.className = "leak";
+        var line = formatNum(bounce.value) + " bounced";
+        if (sent && sent.value) line += " · " + percent(bounce.value, sent.value) + " of sent";
+        leak.textContent = line;
+        card.appendChild(leak);
+      }
+
+      var hasMeetingStep = (channel.steps || []).some(function (step) { return step.key === "meetings"; });
+      if (!hasMeetingStep && channel.meetings !== null && channel.meetings !== undefined) {
+        var booked = document.createElement("p");
+        booked.className = channel.meetings > 0 ? "booked" : "leak";
+        booked.textContent = formatNum(channel.meetings) + " " + plural(channel.meetings, "meeting", "meetings") + " booked";
+        card.appendChild(booked);
+      }
+
+      root.appendChild(card);
+    });
+  }
+
+  function renderActivity(period) {
+    var chart = document.getElementById("chart");
+    var fallback = document.getElementById("chart-fallback");
+    var caption = document.getElementById("activity-caption");
+    caption.textContent = period.activityCaption || "";
+    chart.replaceChildren();
+    fallback.replaceChildren();
+    var days = period.activity || [];
+    if (!days.length) {
+      var empty = document.createElement("p");
+      empty.className = "empty";
+      empty.textContent = "No daily activity in this range.";
+      fallback.appendChild(empty);
+      return;
+    }
+
+    var metrics = [
+      { key: "reached", label: "Reached", cls: "reached" },
+      { key: "replies", label: "Replies", cls: "replies" },
+      { key: "meetings", label: "Meetings", cls: "meetings" }
+    ];
+
+    metrics.forEach(function (metric) {
+      var max = 0;
+      days.forEach(function (day) { max = Math.max(max, day[metric.key] || 0); });
+      var lane = document.createElement("div");
+      lane.className = "lane " + metric.cls;
+      var name = document.createElement("span");
+      name.className = "lane-name";
+      name.textContent = metric.label;
+      var cols = document.createElement("div");
+      cols.className = "cols";
+      cols.style.setProperty("--days", String(days.length));
+      days.forEach(function (day) {
+        var value = day[metric.key] || 0;
+        var col = document.createElement("div");
+        col.className = "col";
+        col.title = day.label + " " + day.date + ": " + formatNum(value) + " " + metric.label.toLowerCase();
+        var n = document.createElement("span");
+        n.className = "n" + (value === 0 ? " zero" : "");
+        n.textContent = formatNum(value);
+        var slot = document.createElement("span");
+        slot.className = "bar-slot";
+        var bar = document.createElement("span");
+        bar.className = "bar";
+        bar.style.setProperty("--h", (max > 0 ? (value / max) * 100 : 0) + "%");
+        slot.appendChild(bar);
+        col.append(n, slot);
+        cols.appendChild(col);
+      });
+      lane.append(name, cols);
+      chart.appendChild(lane);
+    });
+
+    var axis = document.createElement("div");
+    axis.className = "lane days";
+    var spacer = document.createElement("span");
+    spacer.className = "lane-name";
+    var labels = document.createElement("div");
+    labels.className = "cols";
+    labels.style.setProperty("--days", String(days.length));
+    days.forEach(function (day) {
+      var lab = document.createElement("span");
+      lab.className = "day";
+      lab.textContent = day.label;
+      labels.appendChild(lab);
+    });
+    axis.append(spacer, labels);
+    chart.appendChild(axis);
+
+    var table = document.createElement("table");
+    var cap = document.createElement("caption");
+    cap.textContent = "Daily activity. " + (period.activityCaption || "");
+    table.appendChild(cap);
+    var head = document.createElement("thead");
+    var hr = document.createElement("tr");
+    ["Day", "People reached", "Replies", "Meetings"].forEach(function (text) {
+      var th = document.createElement("th");
+      th.textContent = text;
+      hr.appendChild(th);
+    });
+    head.appendChild(hr);
+    var body = document.createElement("tbody");
+    days.forEach(function (day) {
+      var tr = document.createElement("tr");
+      [day.label + " " + day.date, day.reached, day.replies, day.meetings].forEach(function (text) {
+        var td = document.createElement("td");
+        td.textContent = text;
+        tr.appendChild(td);
+      });
+      body.appendChild(tr);
+    });
+    table.append(head, body);
+    var hidden = document.createElement("div");
+    hidden.className = "sr-only";
+    hidden.appendChild(table);
+    fallback.appendChild(hidden);
+  }
+
+  function renderReplies(replies) {
+    var root = document.getElementById("replies");
+    root.replaceChildren();
+    if (!replies.length) {
+      var empty = document.createElement("p");
+      empty.className = "empty";
+      empty.textContent = "No replies in this range.";
+      root.appendChild(empty);
+      return;
+    }
+    replies.forEach(function (reply) {
+      var item = document.createElement("article");
+      item.className = "reply";
+      var top = document.createElement("div");
+      top.className = "reply-top";
+      var name = document.createElement("h3");
+      name.textContent = reply.name;
+      var when = document.createElement("time");
+      when.textContent = reply.when || "";
+      top.append(name, when);
+      var meta = document.createElement("p");
+      meta.className = "reply-meta";
+      meta.append(document.createTextNode((reply.title || "") + ", " + (reply.company || "")));
+      if (reply.channel) meta.append(document.createTextNode(" · " + reply.channel));
+      if (reply.positive) {
+        var pos = document.createElement("span");
+        pos.className = "pos";
+        pos.textContent = " · Positive";
+        meta.appendChild(pos);
+      }
+      var quote = document.createElement("p");
+      quote.className = "snippet";
+      quote.textContent = reply.snippet || "";
+      item.append(top, meta, quote);
+      root.appendChild(item);
+    });
+  }
+
+  function renderCall(call) {
+    var root = document.getElementById("call");
+    root.replaceChildren();
+    if (!call) return;
+    var when = document.createElement("p");
+    when.className = "call-when";
+    when.textContent = call.when + (call.minutes ? " · " + call.minutes + " min" : "");
+    var list = document.createElement("ul");
+    list.className = "results-list";
+    (call.bullets || []).forEach(function (text) {
+      var li = document.createElement("li");
+      li.textContent = text;
+      list.appendChild(li);
+    });
+    root.append(when, list);
+  }
+
+  function renderCampaigns(campaigns) {
+    var root = document.getElementById("campaigns");
+    root.replaceChildren();
+    if (!campaigns.length) {
+      var empty = document.createElement("p");
+      empty.className = "empty";
+      empty.textContent = "No active campaigns.";
+      root.appendChild(empty);
+      return;
+    }
+    campaigns.forEach(function (campaign) {
+      var item = document.createElement("article");
+      item.className = "campaign";
+      var top = document.createElement("div");
+      top.className = "campaign-top";
+      var name = document.createElement("h3");
+      name.textContent = campaign.name;
+      var tag = document.createElement("span");
+      tag.className = "tag soon";
+      tag.textContent = campaign.channel || "";
+      var count = document.createElement("p");
+      count.className = "campaign-count";
+      count.textContent = formatNum(campaign.done) + " of " + formatNum(campaign.total) + " " + (campaign.unit || "");
+      top.append(name, tag, count);
+      var track = document.createElement("div");
+      track.className = "track";
+      var fill = document.createElement("div");
+      fill.className = "fill" + (campaign.done > 0 ? " on" : "");
+      var width = campaign.total > 0 ? (campaign.done / campaign.total) * 100 : 0;
+      fill.style.width = Math.min(width, 100) + "%";
+      track.appendChild(fill);
+      item.append(top, track);
+      if (campaign.note) {
+        var note = document.createElement("p");
+        note.className = "campaign-note";
+        note.textContent = campaign.note;
+        item.appendChild(note);
+      }
+      root.appendChild(item);
+    });
+  }
+
+  function renderFooter(data) {
+    var foot = document.getElementById("foot");
+    foot.replaceChildren();
+    if (data.sample) {
+      foot.append(document.createTextNode(data.client + " is a made-up client, and every number here is fake. Questions: "));
+    } else {
+      foot.append(document.createTextNode("Prepared for " + data.client + ". Questions: "));
+    }
+    var link = document.createElement("a");
+    link.href = "mailto:joel@pushtomain.xyz";
+    link.textContent = "joel@pushtomain.xyz";
+    foot.appendChild(link);
+  }
+
+  function formatNum(n) {
+    return new Intl.NumberFormat("en-US").format(n || 0);
+  }
+
+  function formatDelta(n) {
+    if (n > 0) return "+" + formatNum(n);
+    if (n < 0) return "\u2212" + formatNum(Math.abs(n));
+    return "0";
+  }
+
+  function deltaClass(n) {
+    if (n > 0) return "up";
+    if (n < 0) return "down";
+    return "flat";
+  }
+
+  function percent(part, whole) {
+    if (!whole) return "0%";
+    var rounded = Math.round((part / whole) * 1000) / 10;
+    var text = rounded % 1 === 0 ? String(rounded) : rounded.toFixed(1);
+    return text + "%";
+  }
+
+  function plural(n, one, many) {
+    return n === 1 ? one : many;
+  }
+
+  function formatDay(iso) {
+    var parts = String(iso).split("-");
+    if (parts.length !== 3) return iso;
+    var date = new Date(Date.UTC(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2])));
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      timeZone: "UTC"
+    }).format(date);
+  }
+})();
+  </script>
+</body>
+</html>
